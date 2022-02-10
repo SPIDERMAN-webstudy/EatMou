@@ -1,20 +1,20 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const initialState = [
-  {
-    name: "",
-    openTime: new Date(),
-    closeTime: new Date(),
-    telephone: "",
-    address: "",
-    today: [],
-    menu: [{ menuName: "", menuPrice: 0 }],
-  },
+  //   {
+  //     name: "",
+  //     openTime: "",
+  //     closeTime: "",
+  //     telephone: "",
+  //     address: "",
+  //     today: [],
+  //     menu: [{ menuName: "", menuPrice: 0 }],
+  //   },
 ];
 let kitchenInfo = {
   name: "",
-  openTime: new Date(),
-  closeTime: new Date(),
+  openTime: "",
+  closeTime: "",
   telephone: "",
   address: "",
   today: [],
@@ -25,15 +25,16 @@ const kitchenSlice = createSlice({
   initialState,
   reducers: {
     addKitchen(state, action) {
-      kitchenInfo = {
-        name: action.payload.name,
-        openTime: action.payload.openTime,
-        closeTiem: action.payload.closeTime,
-        telephone: action.payload.telephone,
-        address: action.payload.address,
-        today: action.payload.today,
-        menu: action.payload.menu,
-      };
+      //   kitchenInfo = {
+      //     name: action.payload.name,
+      //     openTime: action.payload.openTime,
+      //     closeTiem: action.payload.closeTime,
+      //     telephone: action.payload.telephone,
+      //     address: action.payload.address,
+      //     today: action.payload.today,
+      //     menu: action.payload.menu,
+      //   };
+      kitchenInfo = action.payload;
       state.push(kitchenInfo);
     },
     deleteKitchen(state, action) {
@@ -45,5 +46,5 @@ const kitchenSlice = createSlice({
 const store = configureStore({
   reducer: kitchenSlice.reducer,
 });
-export const counterActions = kitchenSlice.actions;
+export const kitchenActions = kitchenSlice.actions;
 export default store;
