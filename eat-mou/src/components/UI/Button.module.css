@@ -1,12 +1,10 @@
 .button {
-  border-radius: 15px;
   background-color: #ff6e2e;
   color: white;
   text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
   border: 0ch;
   box-shadow: 0 2px 4px rgb(182, 182, 182);
 }
