@@ -1,8 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import { kitchenActions } from "./store/index";
+
 import { useEffect, useState } from "react";
 
 import Card from "./components/UI/Card";
+
+import DangolItem from "./components/Dangol/DangolItem";
 
 const DUMMY_kitchen = {
   name: "동수네 밥상",
@@ -39,6 +42,8 @@ function App() {
       {console.log(kitchenData)}
       {console.log(isLoaded)}
       {isLoaded && <Card>{kitchenData[0].name}</Card>}
+      <DangolItem />
+
     </div>
   );
 }
