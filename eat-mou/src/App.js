@@ -3,8 +3,10 @@ import { kitchenActions } from "./store/index";
 
 import { useEffect, useState } from "react";
 
+import styles from "./App.module.css";
 import Card from "./components/UI/Card";
 import Button from "./components/UI/Button";
+import Input from "./components/UI/Input";
 
 import DangolItem from "./components/Dangol/DangolItem";
 
@@ -33,13 +35,13 @@ function App() {
   const kitchenData = useSelector((state) => state);
 
   return (
-    <div>
-      <img src={require("./components/UI/logo.png")} />
-      <form>
-        <input placeholder="식당을 검색하세요" />
-        <button>검색</button>
+    <div className={styles.layout}>
+      <img className={styles.logo} src={require("./components/UI/logo.png")} />
+      <form className={styles.form}>
+        <Input placeholder="식당 이름 검색하기" />
+        {/* <Button>검색</Button> */}
       </form>
-      <Button>주변 식당 찾기</Button>
+      <Button className={styles.locationBtn}>주변 식당 찾기</Button>
       {console.log(kitchenData)}
       {console.log(isLoaded)}
       {isLoaded && <DangolItem />}
