@@ -21,7 +21,8 @@
 [ETC] : 주석 추가와 같은 잡일  
  
 ### Role
-이승준 : App / DummyData, Redux / UI
-민승준 : Dangol / Search
-서동수 : Location / Add
-이수영 : Info 
+이승준 : App / DummyData, Redux / UI  
+민승준 : Dangol / Search  
+서동수 : Location / Add  
+이수영 : Info   
+ 
