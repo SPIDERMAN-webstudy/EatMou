@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { kitchenActions } from "./store/index";
 import { useEffect } from "react";
-
+import DangolItem from "./components/Dangol/DangolItem";
 const DUMMY_kitchen = {
   name: "동수네 밥상",
   openTime: "11:00",
@@ -33,6 +33,7 @@ function App() {
       </form>
       <button>주변 식당 찾기</button>
       {console.log(kitchenData)}
+      <DangolItem />
     </div>
   );
 }
