@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const location = (props) => {
-  const selectDistanceList = [100, 300, 500];
+  const selectDistanceList = [100, 300, 500, 600];
   const dummyData = ["은혜식당", "미키식당", "백반기사집"];
   const [distance, setDistance] = useState("1000");
   const selectDistance = (event) => {
