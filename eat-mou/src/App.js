@@ -4,6 +4,7 @@ import { kitchenActions } from "./store/index";
 import { useEffect, useState } from "react";
 
 import Card from "./components/UI/Card";
+import Button from "./components/UI/Button";
 
 import DangolItem from "./components/Dangol/DangolItem";
 
@@ -38,12 +39,10 @@ function App() {
         <input placeholder="식당을 검색하세요" />
         <button>검색</button>
       </form>
-      <button>주변 식당 찾기</button>
+      <Button>주변 식당 찾기</Button>
       {console.log(kitchenData)}
       {console.log(isLoaded)}
-      {isLoaded && <Card>{kitchenData[0].name}</Card>}
-      <DangolItem />
-
+      {isLoaded && <DangolItem />}
     </div>
   );
 }
