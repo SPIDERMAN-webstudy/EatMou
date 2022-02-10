@@ -5,9 +5,9 @@
 }
 
 .logo {
-  width: 40%;
+  width: 30%;
   margin-bottom: 70px;
-  margin-top: 20px;
+  margin-top: 120px;
 }
 
 .form {
@@ -19,6 +19,12 @@
   width: 100%;
   text-align: center;
   font-size: 2rem;
+  padding: 1rem;
+}
+
+.form input::placeholder {
+  color: #ff6e2e;
+  font-weight: bolder;
 }
 
 .locationBtn {
