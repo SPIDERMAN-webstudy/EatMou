@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div className={styles.layout}>
-      <img className={styles.logo} src={require("./components/UI/logo.png")} />
+      <img className={styles.logo} src={require("./UI/logo.png")} />
       <form className={styles.form}>
         <Input placeholder="식당 이름 검색하기" />
         {/* <Button>검색</Button> */}
