@@ -30,10 +30,13 @@ const Location = (props) => {
             closeTime={kitchen.closeTime} 
             telephone={kitchen.telephone} 
             distance={kitchen.distance}
+            Sdistance = {distance}
             address={kitchen.address}
-            dangolCount={kitchen.dangolCount}
+            dangol={kitchen.dangol}
             today={kitchen.today} 
-            menu={kitchen.menu}/>
+            menu={kitchen.menu}
+            src = {kitchen.src}
+            />
         ))}
       </div>
     );
