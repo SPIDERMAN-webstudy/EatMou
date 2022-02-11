@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { kitchenActions } from "../store/index";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { kitchenActions } from "../store/index";
+
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import styles from "./App.module.css";
@@ -69,14 +70,22 @@ function App() {
 
   const kitchenData = useSelector((state) => state);
 
+  const navigate = useNavigate();
+
+  const searchSubmitHandler = (event) => {
+    event.preventDefault();
+    navigate("/search");
+  };
   return (
     <div className={styles.layout}>
       <img className={styles.logo} src={require("./UI/logo.png")} />
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={searchSubmitHandler}>
         <Input placeholder="식당 이름 검색하기" />
         {/* <Button>검색</Button> */}
       </form>
-      <Button className={styles.locationBtn}>주변 식당 찾기</Button>
+      <Link to={`/location`}>
+        <Button className={styles.locationBtn}>주변 식당 찾기</Button>
+      </Link>
       {console.log(kitchenData)}
       {console.log(isLoaded)}
       {isLoaded && <DangolItem />}

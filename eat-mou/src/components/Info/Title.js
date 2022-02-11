@@ -2,15 +2,15 @@ import { useSelector } from "react-redux";
 
 const Title = (props) => {
   const kitchenData = useSelector((state) => state);
+  const dong = kitchenData[0];
   return (
     <div>
-      <span>{kitchenData[0].name}</span>
+      <span>{dong.name}</span>
       <span>🦴</span>
       <span>
-        {kitchenData[0].openTime}~{kitchenData[0].closeTime}{" "}
-        {kitchenData[0].address}
+        {dong.openTime}~{dong.closeTime} {dong.address}
       </span>
-      <span>{kitchenData[0].telephone}</span>
+      <span>{dong.telephone}</span>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import App from "./components/App";
 import KitchenInfo from "./components/Info/KitchenInfo";
 import Search from "./components/Search/Search";
 import Location from "./components/Location/Location";
-function Rounter() {
+function RouterBase() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
@@ -16,4 +16,4 @@ function Rounter() {
   );
 }
 
-export default Router;
+export default RouterBase;

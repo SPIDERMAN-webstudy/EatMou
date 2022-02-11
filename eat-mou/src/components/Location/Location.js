@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import LocationKitchenList from "./LocationKitchenList";
 
 
-const location = (props) => {
+const Location = (props) => {
   const kitchen = useSelector((state)=>state);
 
     const [distance, setDistance] = useState(1000);
@@ -23,18 +23,23 @@ const location = (props) => {
           <option value="500">500</option>
         </select>
         {kitchen.map(() => (
-            <LocationKitchenList 
-            setDistance={distance} 
-            name={kitchen.name} 
+            <LocationKitchenList
+            setDistance={distance}
+            name={kitchen.name}
             openTime={kitchen.openTime} 
             closeTime={kitchen.closeTime} 
             telephone={kitchen.telephone} 
             distance={kitchen.distance}
-            address={kitchen.address} 
-            dangolCount={kitchen.dangolCount} 
+            Sdistance = {distance}
+            address={kitchen.address}
+            dangol={kitchen.dangol}
             today={kitchen.today} 
-            menu={kitchen.menu}/>
+            menu={kitchen.menu}
+            src = {kitchen.src}
+            />
         ))}
       </div>
     );
 }
+
+export default Location;
