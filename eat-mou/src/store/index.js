@@ -19,6 +19,7 @@ let kitchenInfo = {
   distance: 0,
   telephone: "",
   address: "",
+  dangolCount: 0,
   today: [],
   menu: [{ menuName: "", menuPrice: 0 }],
 };
