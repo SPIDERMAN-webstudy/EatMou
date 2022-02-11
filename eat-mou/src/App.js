@@ -9,6 +9,7 @@ import Button from "./components/UI/Button";
 import Input from "./components/UI/Input";
 
 import DangolItem from "./components/Dangol/DangolItem";
+import KitchenInfo from "./components/Info/KitchenInfo";
 
 const DUMMY_kitchen = {
   name: "동수네 밥상",
