@@ -12,16 +12,18 @@ const initialState = [
   //     menu: [{ menuName: "", menuPrice: 0 }],
   //   },
 ];
-let kitchenInfo = {
-  name: "",
-  openTime: "",
-  closeTime: "",
-  distance: 0,
-  telephone: "",
-  address: "",
-  today: [],
-  menu: [{ menuName: "", menuPrice: 0 }],
-};
+
+// let kitchenInfo = {
+//   name: "",
+//   openTime: "",
+//   closeTime: "",
+//   distance: 0,
+//   telephone: "",
+//   address: "",
+//   today: [],
+//   menu: [{ menuName: "", menuPrice: 0 }],
+// };
+
 const kitchenSlice = createSlice({
   name: "kitchen",
   initialState,
@@ -36,8 +38,9 @@ const kitchenSlice = createSlice({
       //     today: action.payload.today,
       //     menu: action.payload.menu,
       //   };
-      kitchenInfo = action.payload;
-      state.push(kitchenInfo);
+
+      // kitchenInfo = action.payload;
+      state.push(action.payload);
     },
     deleteKitchen(state, action) {
       state.filter((kitchen) => kitchen !== action.payload);
