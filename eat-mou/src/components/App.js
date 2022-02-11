@@ -47,6 +47,7 @@ const DUMMY_kitchen = {
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(kitchenActions.addKitchen(DUMMY_kitchen));
     setIsLoaded(true);
