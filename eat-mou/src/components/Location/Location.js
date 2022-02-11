@@ -5,7 +5,7 @@ import LocationKitchenList from "./LocationKitchenList";
 
 const location = (props) => {
   const DUMMY_kitchen = [{
-    name= "동수네 밥상 최고",
+    name= "동수네 밥상",
     dangolCount = 0,
     openTime= "11:00",
     closeTime= "22:00",
