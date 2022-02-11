@@ -3,19 +3,18 @@ import { useSelector } from "react-redux";
 
 import Card from "../UI/Card";
 const DangolItem = () => {
-  const id = "test";
   const kitchenData = useSelector((state) => state);
   return (
     <React.Fragment>
       {kitchenData.map((item) => (
-        <Card key={id}>
+        <Card id={item.id} key={Math.random()}>
           <div>{item.name}</div>
           <div>
             {item.openTime}~{item.closeTime}
           </div>
           <div>
             {item.today.map((menu) => (
-              <div>{menu}</div>
+              <div key={Math.random()}>{menu}</div>
             ))}
           </div>
         </Card>
