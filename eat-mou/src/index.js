@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import Router from "./Router";
+import RouterBase from "./Router";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store/index";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router />
+      <RouterBase />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
