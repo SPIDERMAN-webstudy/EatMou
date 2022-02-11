@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import LocationKitchenList from "./LocationKitchenList";
 
 
-const location = (props) => {
+const Location = (props) => {
   const kitchen = useSelector((state)=>state);
 
     const [distance, setDistance] = useState(1000);
@@ -38,3 +38,5 @@ const location = (props) => {
       </div>
     );
 }
+
+export default Location;

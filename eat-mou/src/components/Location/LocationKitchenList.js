@@ -11,3 +11,5 @@ const LocationKitchenList = (props) => {
         </Card>
     );
 }
+
+export default LocationKitchenList;
