@@ -23,15 +23,15 @@ const location = (props) => {
           <option value="500">500</option>
         </select>
         {kitchen.map(() => (
-            <LocationKitchenList 
-            setDistance={distance} 
-            name={kitchen.name} 
+            <LocationKitchenList
+            setDistance={distance}
+            name={kitchen.name}
             openTime={kitchen.openTime} 
             closeTime={kitchen.closeTime} 
             telephone={kitchen.telephone} 
             distance={kitchen.distance}
-            address={kitchen.address} 
-            dangolCount={kitchen.dangolCount} 
+            address={kitchen.address}
+            dangolCount={kitchen.dangolCount}
             today={kitchen.today} 
             menu={kitchen.menu}/>
         ))}
