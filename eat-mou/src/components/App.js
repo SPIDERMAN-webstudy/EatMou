@@ -1,14 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
-import { kitchenActions } from "./store/index";
+import { kitchenActions } from "../store/index";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
 import styles from "./App.module.css";
-import Card from "./components/UI/Card";
-import Button from "./components/UI/Button";
-import Input from "./components/UI/Input";
+// import Card from "./components/UI/Card";
+import Button from "./UI/Button";
+import Input from "./UI/Input";
 
-import DangolItem from "./components/Dangol/DangolItem";
+import DangolItem from "./Dangol/DangolItem";
 
 const DUMMY_kitchen = {
   name: "동수네 밥상",
