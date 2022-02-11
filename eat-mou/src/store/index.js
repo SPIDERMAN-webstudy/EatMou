@@ -12,6 +12,7 @@ const initialState = [
   //     menu: [{ menuName: "", menuPrice: 0 }],
   //   },
 ];
+
 // let kitchenInfo = {
 //   name: "",
 //   openTime: "",
@@ -22,6 +23,7 @@ const initialState = [
 //   today: [],
 //   menu: [{ menuName: "", menuPrice: 0 }],
 // };
+
 const kitchenSlice = createSlice({
   name: "kitchen",
   initialState,
