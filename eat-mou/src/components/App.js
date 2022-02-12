@@ -11,6 +11,7 @@ import Button from "./UI/Button";
 import Input from "./UI/Input";
 
 import DangolItem from "./Dangol/DangolItem";
+
 const DUMMY_kitchen = {
   name: "동수네 밥상",
   openTime: "11:00",
@@ -19,22 +20,6 @@ const DUMMY_kitchen = {
   telephone: "010-6588-9498",
   address: "서울시 광진구 광나루로  17길 52",
   today: ["오징어 볶음", "맛살 튀김", "떡볶이", "순대", "김치 볶음", "닭죽"],
-  dangol: 280,
-  menu: [
-    { menuName: "왕돈까스", menuPrice: 10000 },
-    { menuName: "차돌 라볶이", menuPrice: 5000 },
-    { menuName: "김치 볶음밥", menuPrice: 7000 },
-  ],
-};
-const DUMMYs_kitchen = {
-  name: "동수 밥상",
-  openTime: "11:00",
-  closeTime: "22:00",
-  distance: 400,
-  telephone: "010-6588-9498",
-  address: "서울시 광진구 광나루로  17길 52",
-  today: ["오징어 볶음", "맛살 튀김", "떡볶이", "순대", "김치 볶음", "닭죽"],
-  dangol: 279,
   menu: [
     {
       menuName: "주먹고기",
@@ -65,7 +50,6 @@ function App() {
 
   useEffect(() => {
     dispatch(kitchenActions.addKitchen(DUMMY_kitchen));
-    dispatch(kitchenActions.addKitchen(DUMMYs_kitchen));
     setIsLoaded(true);
   }, []);
 
