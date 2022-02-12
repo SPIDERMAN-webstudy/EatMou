@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { kitchenActions } from "../store/index";
 
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 
 import styles from "./App.module.css";
 // import Card from "./components/UI/Card";
@@ -44,14 +44,10 @@ const DUMMY_kitchen = {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWNMTr-fStJ-EMhuy92gjOCNxY5cn_GWPLKw&usqp=CAU",
   dangol: 10,
 };
+
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(kitchenActions.addKitchen(DUMMY_kitchen));
-    setIsLoaded(true);
-  }, []);
 
   const kitchenData = useSelector((state) => state);
 
@@ -59,8 +55,9 @@ function App() {
 
   const searchSubmitHandler = (event) => {
     event.preventDefault();
-    navigate("/search");
+    navigate("/search", event.target.value);
   };
+
   return (
     <div className={styles.layout}>
       <img className={styles.logo} src={require("./UI/logo.png")} />
