@@ -1,0 +1,39 @@
+.address {
+  background-color: #ff6e2e;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 80%;
+  border: 0ch;
+  box-shadow: 0 2px 4px rgb(182, 182, 182);
+  /* transition: all 0.2s; */
+  font-size: 1.3rem;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select {
+  margin-left: 45%;
+  width: 15%;
+  height: 5%;
+  /* margin: 13px 81px 31px 7px; */
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  background: url("https://prdsrv02.quality-line.org/wp-content/themes/qualityline/img/arrow_down.png")
+    no-repeat 95% 50%;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select::-ms-expand {
+  display: none;
+}

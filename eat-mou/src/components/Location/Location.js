@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
+import styles from "./Location.module.css"
 import LocationKitchenList from "./LocationKitchenList";
 
 const Location = (props) => {
@@ -15,8 +16,8 @@ const Location = (props) => {
   return (
     <div>
       <h3>Back</h3>
-      <h4>서울시 광진구 광나루토 17길 52</h4>
-      <select onChange={selectDistance}>
+      <div className={styles.address}>서울시 광진구 광나루토 17길 52</div>
+      <select className={styles.select} onChange={selectDistance}>
         <option value="100">100</option>
         <option value="300">300</option>
         <option value="600">600</option>
@@ -34,7 +35,7 @@ const Location = (props) => {
           dangol={item.dangol}
           today={item.today}
           menu={item.menu}
-          src={item.src}
+          src={item.kitchenImg}
         />
       ))}
     </div>
