@@ -1,0 +1,44 @@
+.card {
+  border: 0.2px solid #ff6e2e;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(78, 78, 78);
+  margin:2rem;
+}
+.form {
+    display: flex;
+    flex-direction: row;
+}
+.img{
+    flex-grow:1;
+}
+.info {
+    padding-left: 2%;
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    flex-grow:1;
+    display:flex;
+    flex-direction: row;
+}
+.name{
+    font-size: 2rem;
+}
+.dangol{
+    padding-left: 40%;
+    font-size: 2rem;
+}
+.today {
+    flex-grow: 1;
+    font-size:1rem;
+}
+.time{
+    flex-grow: 0.5;
+}
+.address{
+    flex-grow: 0.7;
+}

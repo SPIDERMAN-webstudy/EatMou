@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Card from "../UI/Card";
+import styles from "./LocationKitchenList.module.css"
 
 const LocationKitchenList = (props) => {
   const [isShort, setIsShort] = useState(false);
@@ -19,22 +20,26 @@ const LocationKitchenList = (props) => {
   return (
     <div>
       {isShort ? (
-        <Card>
-          <img src={props.src} alt="" />
-          <div>
-            <h3>{props.name}</h3>
-            {props.count}
+        <div className={styles.card}>
+          <div className={styles.form}>
+            <img className={styles.img} src={props.src} alt="" />
+            <div className={styles.info}>
+              <div className={styles.title}>
+                <div className={styles.name}>{props.name}</div>
+                <div className={styles.dangol}>{props.dangol}</div>
+              </div>
+              <div className={styles.today}>{props.today}</div>
+              <div className={styles.time}>
+                {`${props.openTime}~${props.closeTime} `}
+                {props.distance}
+              </div>
+              <div className={styles.address}>
+                {props.address}
+                {props.telephone}
+              </div>
+            </div>
           </div>
-          <div>{props.today}</div>
-          <div>
-            {`${props.openTime}~${props.closeTime}`}
-            {props.distance}
-          </div>
-          <div>
-            {props.address}
-            {props.telephone}
-          </div>
-        </Card>
+        </div>
       ) : (
         <div></div>
       )}
