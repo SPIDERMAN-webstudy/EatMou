@@ -5,6 +5,8 @@ import { kitchenActions } from "../store/index";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useCallback, useMemo } from "react";
 
+import { ReactComponent as Logo } from "./UI/logo.svg";
+
 import styles from "./App.module.css";
 // import Card from "./components/UI/Card";
 import Button from "./UI/Button";
@@ -46,7 +48,7 @@ const DUMMY_kitchen = {
 };
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
 
   const kitchenData = useSelector((state) => state);
@@ -60,7 +62,8 @@ function App() {
 
   return (
     <div className={styles.layout}>
-      <img className={styles.logo} src={require("./UI/logo.png")} />
+      {/* <img className={styles.logo} src="./UI/logo.svg" alt="Eat-Mou Logo" /> */}
+      <Logo className={styles.logo} width="25%" />
       <form className={styles.form} onSubmit={searchSubmitHandler}>
         <Input placeholder="식당 이름 검색하기" />
         {/* <Button>검색</Button> */}
@@ -69,8 +72,7 @@ function App() {
         <Button className={styles.locationBtn}>주변 식당 찾기</Button>
       </Link>
       {console.log(kitchenData)}
-      {console.log(isLoaded)}
-      {isLoaded && <DangolItem />}
+      <DangolItem />
     </div>
   );
 }
