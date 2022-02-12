@@ -1,0 +1,11 @@
+.today {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oneul {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6e2e;
+}
