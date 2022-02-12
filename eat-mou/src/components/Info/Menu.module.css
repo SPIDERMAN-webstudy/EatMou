@@ -1,0 +1,12 @@
+.menuName {
+  flex-grow: 0;
+  font-size: 24px;
+}
+
+.foodpic {
+  width: 200px;
+  height: 200px;
+  flex-grow: 0;
+  margin: 17.7px 10px 20px 0;
+  padding: 0 0 3px;
+}
