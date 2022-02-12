@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import SearchKitchenList from "./SearchKitchenList";
 const Search = () => {
+  const navigate = useNavigate();
   const kitchenDate = useSelector((state) => state);
   const [sortedKitchen, setSortedKitchen] = useState(kitchenDate);
   const [method, setMethod] = useState(true);
@@ -41,10 +43,15 @@ const Search = () => {
     temp = sortedKitchen.sort((a, b) => b.dangol - a.dangol);
     setSortedKitchen(temp);
   };
+  const backHandler = () => {
+    navigate("/");
+  };
+  const addHandler = () => {
+    navigate("/add");
+  };
   return (
     <React.Fragment>
-      <button>back</button>
-      {/*라우터로 back연결 홈으로 */}
+      <button onClick={backHandler}>back</button>
       <form onSubmit={submitHandler}>
         <Input
           placeholder="식당 이름 검색하기"
@@ -53,7 +60,7 @@ const Search = () => {
         />
         <Button type="submit">검색</Button>
       </form>
-      <p>내가 아는 식당이 나오지 않는다면?</p> {/* 라우터로 add로 연결*/}
+      <button onClick={addHandler}>내가 아는 식당이 나오지 않는다면?</button>
       <br />
       <div>
         <button onClick={distanceButtonHandler}>거리순</button>
@@ -64,8 +71,8 @@ const Search = () => {
         {sortedKitchen.map((item) => (
           <SearchKitchenList
             img={item.kitchenImg}
-            id={Math.random()}
-            key={Math.random()}
+            id={item.id}
+            key={item.id}
             openTime={item.openTime}
             closeTime={item.closeTime}
             name={item.name}
