@@ -1,0 +1,40 @@
+.name {
+  width: 223px;
+  height: 34.4px;
+  flex-grow: 0;
+  margin: 129.5px 60px 0 3px;
+  font-size: 32px;
+  text-align: left;
+  color: #000;
+}
+
+.dangol {
+  margin: 0 20px 0 0;
+}
+
+.bone {
+  width: 25px;
+  height: 22.6px;
+  flex-grow: 0;
+}
+
+.time,
+.address {
+  width: 342px;
+  height: 42.3px;
+  flex-grow: 0;
+  margin: 0 0 13.8px 3px;
+  font-size: 12px;
+  text-align: left;
+  color: #000;
+}
+
+.telephone {
+  width: 122px;
+  height: 21px;
+  flex-grow: 0;
+  margin: 80px 13px 13.7px 80px;
+  font-size: 12px;
+  text-align: right;
+  color: #000;
+}

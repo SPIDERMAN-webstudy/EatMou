@@ -1,0 +1,17 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  width: 360px;
+  height: 258px;
+}
+
+.bg {
+  width: 360px;
+  flex-grow: 0;
+  padding: 10px 5px 50px 5px;
+  background-color: rgb(255, 255, 255);
+}
