@@ -1,7 +1,17 @@
-.line {
-  width: 330px;
-  height: 1px;
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  width: 360px;
+  height: 258px;
+}
+
+.bg {
+  width: 360px;
   flex-grow: 0;
-  margin: 13.7px 15px 7.9px 0;
-  background-color: #000;
+  padding: 10px 5px 50px 5px;
+  background-color: rgb(255, 255, 255);
 }
