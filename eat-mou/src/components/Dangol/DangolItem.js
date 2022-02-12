@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Card from "../UI/Card";
 const DangolItem = () => {
+  const navigate = useNavigate();
   const kitchenData = useSelector((state) => state);
+  const infoHandler = () => {
+    navigate("/kitchen/:id");
+  };
   return (
     <React.Fragment>
       {kitchenData.map((item) => (
         <Card id={item.id} key={Math.random()}>
-          <div>{item.name}</div>
+          <div onClick={infoHandler}>{item.name}</div>
           <div>
             {item.openTime}~{item.closeTime}
           </div>
