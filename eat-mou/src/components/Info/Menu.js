@@ -9,13 +9,8 @@ const Menu = (props) => {
   return (
     <div>
       {dong.map((item) => (
-        <MenuCard>
-          <img
-            src={
-              "https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODEyMjhfMTI5%2FMDAxNTQ1OTczMTEyNzc5.eO8lPFH71cD81XqMPCY_t9iipxqZmrrSzmg5ZhCCOZEg.ko6Y1HzE46ckkfVTKR8EXmOoGlHvExSYhH8ToHgEkUcg.JPEG.ket8880212%2F%25B8%25DE%25B4%25BA%25C6%25C7.jpg"
-            }
-            className={styles.foodpic}
-          />
+        <MenuCard key={item.id}>
+          <img src={item.menuImg} className={styles.menuImg} />
           <div className={styles.menuName}>{item.menuName}</div>
           <div className={styles.menuPrice}>{item.menuPrice}</div>
         </MenuCard>
