@@ -3,11 +3,14 @@
   flex-direction: column;
 }
 .picture{
-  height:8rem;
+  height:10rem;
   flex-grow:1;
   text-align: center;
-  line-height: 120px;
-  margin: 3%;
+  line-height: 160px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  margin-top: 5%;
   border: 0.2px solid #ff6e2e;
   color:#ff6e2e;
   font-size:1.5rem;
@@ -39,6 +42,9 @@
   box-sizing: border-box;
   font-size: 1.2rem;
   margin: 2%;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom:10%;
 }
 .input:focus{
     outline:none;
@@ -49,14 +55,16 @@
   color: white;
   text-align: center;
   font-weight: bold;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  font-size:1.5rem;
   border: 0ch;
   box-shadow: 0 2px 4px rgb(182, 182, 182);
   transition: all 0.2s;
   border-radius: 1rem;
+  width: 25%;
+  margin: 0 auto;
+  height: 20%;
 }
 .registerButton:hover{
   transform: scale(1.1);
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
