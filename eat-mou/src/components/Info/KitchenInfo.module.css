@@ -4,14 +4,27 @@
   align-items: center;
 }
 
-.img {
-  width: 360px;
-  height: 258px;
-}
-
 .bg {
   width: 360px;
   flex-grow: 0;
   padding: 10px 5px 50px 5px;
   background-color: rgb(255, 255, 255);
+}
+
+.img {
+  width: 360px;
+  height: 258px;
+}
+
+.back {
+  position: absolute;
+  top: 2.5rem;
+  left: 50rem;
+  color: #ff6e2e;
+  font-size: 1.3rem;
+  text-align: left;
+  text-decoration: none;
+  border-color: antiquewhite;
+  text-shadow: -0.5px 0 rgb(255, 255, 255), 0 0.5px rgb(255, 255, 255),
+    0.5px 0 rgb(255, 255, 255), 0 -0.5px rgb(255, 255, 255);
 }
