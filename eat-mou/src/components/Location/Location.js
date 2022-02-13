@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
+import Button from "../UI/Button";
 import styles from "./Location.module.css"
 import LocationKitchenList from "./LocationKitchenList";
 
@@ -15,12 +17,14 @@ const Location = (props) => {
 
   return (
     <div>
-      <h3>Back</h3>
+      <Link to={"../"}>
+        <button className={styles.button}>Back</button>
+      </Link>
       <div className={styles.address}>서울시 광진구 광나루토 17길 52</div>
       <select className={styles.select} onChange={selectDistance}>
-        <option value="100">100</option>
-        <option value="300">300</option>
-        <option value="600">600</option>
+        <option value="100">100m 이내</option>
+        <option value="300">300m 이내</option>
+        <option value="600">600m 이내</option>
       </select>
       {console.log(kitchen)}
       {kitchen.map((item) => (

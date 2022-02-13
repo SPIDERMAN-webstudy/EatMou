@@ -3,35 +3,56 @@
   color: white;
   text-align: center;
   font-weight: bold;
-  padding-left: 2rem;
-  padding-right: 2rem;
   width: 80%;
   border: 0ch;
   box-shadow: 0 2px 4px rgb(182, 182, 182);
   /* transition: all 0.2s; */
   font-size: 1.3rem;
   border-radius: 20px;
-  margin-bottom: 50px;
+  margin: 0 auto;
+  margin-bottom:3%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.button{
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  color:#ff6e2e;
+  font-size:1.3rem;
+  font-family: Roboto;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  border: 0ch;
+  transition: all 0.1s;
+   border-radius: 3px;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: all 0.1s;
+}
 
 .select {
   margin-left: 45%;
-  width: 15%;
-  height: 5%;
+  /* width: 15%; */
+  height: 8%;
+  padding: 1%;
   /* margin: 13px 81px 31px 7px; */
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: 600;
+  font-family:Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: normal;
   text-align: center;
-  background: url("https://prdsrv02.quality-line.org/wp-content/themes/qualityline/img/arrow_down.png")
+  background: url("../../arrow_down.png")
     no-repeat 95% 50%;
   border-radius: 0px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border-color: transparent;
 }
 
 .select::-ms-expand {
