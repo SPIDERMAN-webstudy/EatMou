@@ -10,12 +10,13 @@
 
 .dangol {
   margin: 0 20px 0 0;
+  font-size: 25px;
 }
 
 .bone {
-  width: 25px;
-  height: 22.6px;
   flex-grow: 0;
+  cursor: pointer;
+  display: inline;
 }
 
 .time,
