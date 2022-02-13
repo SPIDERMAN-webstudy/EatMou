@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState, useCallback, useMemo } from "react";
 
 import { ReactComponent as Logo } from "./UI/logo.svg";
+import { GoSearch } from "react-icons/go";
 
 import styles from "./App.module.css";
 // import Card from "./components/UI/Card";
@@ -76,7 +77,9 @@ function App() {
           onChange={inputChangeHandler}
           value={input}
         />
-        {/* <Button>검색</Button> */}
+        <Button className={styles.searchBtn}>
+          <GoSearch />
+        </Button>
       </form>
       <Link to={`/location`}>
         <Button className={styles.locationBtn}>주변 식당 찾기</Button>
