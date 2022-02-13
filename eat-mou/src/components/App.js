@@ -49,6 +49,7 @@ const DUMMY_kitchen = {
 
 function App() {
   // const [isLoaded, setIsLoaded] = useState(false);
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
   const kitchenData = useSelector((state) => state);
@@ -57,7 +58,12 @@ function App() {
 
   const searchSubmitHandler = (event) => {
     event.preventDefault();
-    navigate("/search", { state: { word: event.target.value } });
+    console.log(input);
+    navigate("/search", { state: input });
+  };
+
+  const inputChangeHandler = (event) => {
+    setInput(event.target.value);
   };
 
   return (
@@ -65,7 +71,11 @@ function App() {
       {/* <img className={styles.logo} src="./UI/logo.svg" alt="Eat-Mou Logo" /> */}
       <Logo className={styles.logo} width="25%" />
       <form className={styles.form} onSubmit={searchSubmitHandler}>
-        <Input placeholder="식당 이름 검색하기" />
+        <Input
+          placeholder="식당 이름 검색하기"
+          onChange={inputChangeHandler}
+          value={input}
+        />
         {/* <Button>검색</Button> */}
       </form>
       <Link to={`/location`}>
