@@ -12,6 +12,8 @@
 .form {
   margin-bottom: 60px;
   width: 50%;
+  display: flex;
+  flex-direction: row;
 }
 
 .form input {
@@ -19,10 +21,13 @@
   text-align: center;
   font-size: 2rem;
   padding: 1rem;
+  outline: none;
+  /* 네이버 */
+  border: 5px solid rgb(41, 212, 70);
 }
 
 .form input::placeholder {
-  color: #ff6e2e;
+  color: #d6d6d6;
   font-weight: bolder;
 }
 
@@ -30,4 +35,13 @@
   font-size: 1.8rem;
   border-radius: 20px;
   margin-bottom: 80px;
+}
+
+.searchBtn {
+  font-size: 2rem;
+  box-shadow: none;
+  padding-inline: 1.5rem;
+
+  /* 네이버 */
+  background-color: rgb(41, 212, 70);
 }
