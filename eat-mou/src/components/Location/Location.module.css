@@ -58,3 +58,8 @@
 .select::-ms-expand {
   display: none;
 }
+.text{
+  margin-left: 35%;
+  color:#ff6e2e;
+  font-size:1.2rem;
+}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 
-import Button from "../UI/Button";
 import styles from "./Location.module.css"
 import LocationKitchenList from "./LocationKitchenList";
 
@@ -42,6 +41,7 @@ const Location = (props) => {
           src={item.kitchenImg}
         />
       ))}
+      <Link to={'../KitchenAdd'} className={styles.text}>내가 아는 식당이 나오지 않는다면?</Link>
     </div>
   );
 };
