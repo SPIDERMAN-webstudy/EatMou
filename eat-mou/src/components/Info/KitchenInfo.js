@@ -1,4 +1,5 @@
 import styles from "./KitchenInfo.module.css";
+import { Link } from "react-router-dom";
 
 import Title from "./Title";
 import Today from "./Today";
@@ -13,6 +14,9 @@ const KitchenInfo = (props) => {
         }
         className={styles.img}
       />
+      <Link to={"../search"} className={styles.back}>
+        back
+      </Link>
       <div className={styles.bg}>
         <Title />
         <hr className={styles.line}></hr>
