@@ -57,7 +57,7 @@ function App() {
 
   const searchSubmitHandler = (event) => {
     event.preventDefault();
-    navigate("/search", event.target.value);
+    navigate("/search", { state: { word: event.target.value } });
   };
 
   return (
