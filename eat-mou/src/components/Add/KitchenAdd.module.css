@@ -1,0 +1,62 @@
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.picture{
+  height:8rem;
+  flex-grow:1;
+  text-align: center;
+  line-height: 120px;
+  margin: 3%;
+  border: 0.2px solid #ff6e2e;
+  color:#ff6e2e;
+  font-size:1.5rem;
+}
+.button{
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  color:#ff6e2e;
+  font-size:1.3rem;
+  font-family: Roboto;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  border: 0ch;
+  transition: all 0.1s;
+   border-radius: 3px;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: all 0.1s;
+}
+.input {
+  flex-grow:1;
+  border: 0px;
+  border-bottom: 0.3rem solid #ff6e2e;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  margin: 2%;
+}
+.input:focus{
+    outline:none;
+}
+
+.registerButton{
+  background-color: #ff6e2e;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: 0ch;
+  box-shadow: 0 2px 4px rgb(182, 182, 182);
+  transition: all 0.2s;
+  border-radius: 1rem;
+}
+.registerButton:hover{
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
