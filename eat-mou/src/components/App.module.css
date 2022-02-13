@@ -41,7 +41,7 @@
   font-size: 2rem;
   box-shadow: none;
   padding-inline: 1.5rem;
-
+  cursor: pointer;
   /* 네이버 */
   background-color: rgb(41, 212, 70);
 }
