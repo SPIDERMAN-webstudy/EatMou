@@ -77,7 +77,7 @@ function App() {
           onChange={inputChangeHandler}
           value={input}
         />
-        <Button className={styles.searchBtn}>
+        <Button className={styles.searchBtn} type="submit">
           <GoSearch />
         </Button>
       </form>

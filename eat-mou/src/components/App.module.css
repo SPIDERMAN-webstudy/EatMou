@@ -22,10 +22,12 @@
   font-size: 2rem;
   padding: 1rem;
   outline: none;
+  /* 네이버 */
+  border: 5px solid rgb(41, 212, 70);
 }
 
 .form input::placeholder {
-  color: #ff6e2e;
+  color: #d6d6d6;
   font-weight: bolder;
 }
 
@@ -36,6 +38,10 @@
 }
 
 .searchBtn {
-  font-size: 1.8rem;
+  font-size: 2rem;
   box-shadow: none;
+  padding-inline: 1.5rem;
+
+  /* 네이버 */
+  background-color: rgb(41, 212, 70);
 }
