@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Card from "../UI/Card";
-import styles from "./LocationKitchenList.module.css"
+import styles from "./LocationKitchenList.module.css";
 
 const LocationKitchenList = (props) => {
   const [isShort, setIsShort] = useState(false);
@@ -10,9 +9,8 @@ const LocationKitchenList = (props) => {
     if (props.distance < props.selectDistance) {
       setIsShort(true);
       console.log(isShort);
-    }
-    else{
-        setIsShort(false);
+    } else {
+      setIsShort(false);
     }
     console.log(isShort);
   }, [props.selectDistance]);
@@ -28,14 +26,16 @@ const LocationKitchenList = (props) => {
                 <div className={styles.name}>{props.name}</div>
                 <div className={styles.dangol}>{props.dangol}</div>
               </div>
-              <div className={styles.today}>{props.today}</div>
+              <div className={styles.today}>
+                {props.today.map((item) => `${item}/`)}
+              </div>
               <div className={styles.time}>
-                {`${props.openTime}~${props.closeTime} `}
-                {props.distance}
+               {`${props.openTime}~${props.closeTime} `}
+                <div className={styles.distance}>{`${props.distance}m`}</div>
               </div>
               <div className={styles.address}>
                 {props.address}
-                {props.telephone}
+                <span>{props.telephone}</span>
               </div>
             </div>
           </div>
