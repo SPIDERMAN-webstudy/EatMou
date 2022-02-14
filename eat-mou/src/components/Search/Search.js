@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import SearchKitchenList from "./SearchKitchenList";
 const Search = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const kitchenDate = useSelector((state) => state);
   const [sortedKitchen, setSortedKitchen] = useState(kitchenDate);
@@ -12,6 +14,18 @@ const Search = () => {
   let temp = {};
   const id = "th";
   const [kitchenInput, setKitchenInput] = useState("");
+  useEffect(() => {
+    const firstInput = location.state;
+    console.log(firstInput);
+    temp = kitchenDate.filter((val) => {
+      if (firstInput == "") {
+        return val;
+      } else if (val.name.includes(firstInput)) {
+        return val;
+      }
+    });
+    setSortedKitchen(temp);
+  }, []);
   const submitHandler = (event) => {
     event.preventDefault();
     temp = kitchenDate.filter((val) => {
@@ -26,7 +40,6 @@ const Search = () => {
     } else {
       temp = temp.sort((a, b) => b.dangol - a.dangol);
     }
-    console.log(temp);
     setSortedKitchen(temp);
     setKitchenInput("");
   };
@@ -47,7 +60,7 @@ const Search = () => {
     navigate("/");
   };
   const addHandler = () => {
-    navigate("/add");
+    navigate("/Kitchenadd");
   };
   return (
     <React.Fragment>
@@ -67,12 +80,12 @@ const Search = () => {
         <button onClick={dangolButtonHandler}>단골순</button>
       </div>
       <div>
-        {console.log(sortedKitchen)}
+        {/* {console.log(sortedKitchen)} */}
         {sortedKitchen.map((item) => (
           <SearchKitchenList
             img={item.kitchenImg}
             id={item.id}
-            key={item.id}
+            key={Math.random()}
             openTime={item.openTime}
             closeTime={item.closeTime}
             name={item.name}
