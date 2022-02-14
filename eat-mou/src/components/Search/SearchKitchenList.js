@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const SearchKitchenList = (props) => {
   const [show, setshow] = useState(true);
@@ -10,6 +10,18 @@ const SearchKitchenList = (props) => {
     const parse = JSON.parse(t);
     bone = parse;
   }
+  useEffect(() => {
+    const t = localStorage.getItem(DANGOL);
+    if (t !== null) {
+      const parse = JSON.parse(t);
+      const CheckBone = parse.filter(function (element) {
+        return element.id === props.id;
+      });
+      if (CheckBone.length !== 0) {
+        setshow(false);
+      }
+    }
+  }, []);
   const boneLocalSet = () => {
     localStorage.setItem(DANGOL, JSON.stringify(bone));
     if (bone.length === 0) {
@@ -38,14 +50,16 @@ const SearchKitchenList = (props) => {
     <React.Fragment>
       <img src={props.img} />
       <div>
-        <h3 onClick={infoHandler}>{props.name}</h3>
+        <h3 onClick={infoHandler}>
+          {props.name} 거리:{props.distance}
+        </h3>
         {show && <span onClick={boneHandler}>🦴 {props.dangol}</span>}
         {!show && (
           <span onClick={boneCancelHandler}>🦴채워짐 {props.dangol + 1}</span>
         )}
         <span>
           {props.today.map((value) => (
-            <div>{value}</div>
+            <div key={Math.random()}>{value}</div>
           ))}
         </span>
         <span>
@@ -53,7 +67,6 @@ const SearchKitchenList = (props) => {
         </span>
         <span>{props.address}</span>
         <span>{props.telephone}</span>
-        <h6>{props.distance}</h6>
       </div>
     </React.Fragment>
   );
