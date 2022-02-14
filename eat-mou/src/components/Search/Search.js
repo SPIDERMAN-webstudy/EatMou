@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -8,12 +8,40 @@ import SearchKitchenList from "./SearchKitchenList";
 const Search = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const kitchenDate = useSelector((state) => state);
+  const [kitchenDate, setKitchenDate] = useState([]);
   const [sortedKitchen, setSortedKitchen] = useState(kitchenDate);
   const [method, setMethod] = useState(true);
+
   let temp = {};
   const id = "th";
   const [kitchenInput, setKitchenInput] = useState("");
+  const fetchKitchenHandler = useCallback(async () => {
+    const response = await fetch(
+      "https://react-http-184dd-default-rtdb.asia-southeast1.firebasedatabase.app/kitchen.json"
+    );
+    const data = await response.json();
+    console.log(data);
+    const loadedKitchen = [];
+    for (const key in data) {
+      loadedKitchen.push({
+        id: data[key].id,
+        address: data[key].address,
+        name: data[key].name,
+        menu: data[key].menu,
+        closeTime: data[key].closeTime,
+        openTime: data[key].openTime,
+        telephone: data[key].telephone,
+        kitchenImg: data[key].kitchenImg,
+        dangol: data[key].dangol,
+        distance: data[key].distance,
+        today: data[key].today,
+      });
+    }
+    setKitchenDate(loadedKitchen);
+  }, []);
+  useEffect(() => {
+    fetchKitchenHandler();
+  }, [fetchKitchenHandler]);
   useEffect(() => {
     const firstInput = location.state;
     console.log(firstInput);
@@ -24,12 +52,13 @@ const Search = () => {
         return val;
       }
     });
+    console.log(kitchenDate);
     setSortedKitchen(temp);
-  }, []);
+  }, [kitchenDate]);
   const submitHandler = (event) => {
     event.preventDefault();
     temp = kitchenDate.filter((val) => {
-      if (kitchenInput == "") {
+      if (kitchenInput === "") {
         return val;
       } else if (val.name.includes(kitchenInput)) {
         return val;
@@ -80,7 +109,6 @@ const Search = () => {
         <button onClick={dangolButtonHandler}>단골순</button>
       </div>
       <div>
-        {/* {console.log(sortedKitchen)} */}
         {sortedKitchen.map((item) => (
           <SearchKitchenList
             img={item.kitchenImg}
