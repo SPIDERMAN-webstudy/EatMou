@@ -5,15 +5,14 @@
 }
 
 .bg {
-  width: 360px;
-  flex-grow: 0;
-  padding: 10px 5px 50px 5px;
+  width: 25rem;
+  padding: 0.6rem 0.3rem 3rem 0.3rem;
   background-color: rgb(255, 255, 255);
 }
 
 .img {
-  width: 360px;
-  height: 258px;
+  width: 25rem;
+  height: 16rem;
 }
 
 .back {
@@ -24,7 +23,4 @@
   font-size: 1.3rem;
   text-align: left;
   text-decoration: none;
-  border-color: antiquewhite;
-  text-shadow: -0.5px 0 rgb(255, 255, 255), 0 0.5px rgb(255, 255, 255),
-    0.5px 0 rgb(255, 255, 255), 0 -0.5px rgb(255, 255, 255);
 }

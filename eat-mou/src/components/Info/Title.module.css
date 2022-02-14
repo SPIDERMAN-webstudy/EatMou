@@ -17,12 +17,11 @@
   flex-grow: 0;
   cursor: pointer;
   display: inline;
+  margin: 0 30px 0 0;
 }
 
 .time,
 .address {
-  width: 342px;
-  height: 42.3px;
   flex-grow: 0;
   margin: 0 0 13.8px 3px;
   font-size: 12px;
