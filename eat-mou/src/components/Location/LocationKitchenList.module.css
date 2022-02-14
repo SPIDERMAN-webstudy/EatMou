@@ -12,6 +12,7 @@
 }
 .img{
     flex-grow:1;
+    width:30%;
 }
 .info {
     padding-left: 2%;
@@ -38,7 +39,14 @@
 }
 .time{
     flex-grow: 0.5;
+    display: flex;
+    justify-content: space-between;
+}
+.distance{
+    padding-right:1%;
 }
 .address{
     flex-grow: 0.7;
+    display: flex;
+    justify-content: space-between;
 }
