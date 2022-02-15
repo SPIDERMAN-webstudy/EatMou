@@ -35,7 +35,7 @@
   transform: scale(1.1);
   transition: all 0.1s;
 }
-.input {
+.input{
   flex-grow:1;
   border: 0px;
   border-bottom: 0.3rem solid #ff6e2e;
@@ -48,6 +48,42 @@
 }
 .input:focus{
     outline:none;
+}
+.time{
+  display:flex;
+  flex-direction: row;
+  width:80%;
+  margin: 0 auto;
+}
+.openTime{
+  flex-grow:1;
+  border: 0px;
+  border-bottom: 0.3rem solid #ff6e2e;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  margin: 2%;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom:10%;
+  margin-right: 3%;
+}
+.closeTime{
+  flex-grow:1;
+  border: 0px;
+  border-bottom: 0.3rem solid #ff6e2e;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  margin: 2%;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom:10%;
+  margin-left:3%;
+}
+.closeTime:focus{
+  outline:none;
+}
+.openTime:focus{
+  outline:none;
 }
 
 .registerButton{
