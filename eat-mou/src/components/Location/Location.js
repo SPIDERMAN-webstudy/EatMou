@@ -1,18 +1,46 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect, useCallback } from "react";
 import {Link} from "react-router-dom";
 
 import styles from "./Location.module.css"
 import LocationKitchenList from "./LocationKitchenList";
 
 const Location = (props) => {
-  const kitchen = useSelector((state) => state);
+  const [kitchen, setKitchen] = useState([]);
 
   const [distance, setDistance] = useState(100);
+
+  const fetchKitchenHandler = useCallback(async () => {
+    const response = await fetch(
+      "https://react-http-184dd-default-rtdb.asia-southeast1.firebasedatabase.app/kitchen.json"
+    );
+    const data = await response.json();
+    console.log(data);
+    const loadedKitchen = [];
+    for (const key in data) {
+      loadedKitchen.push({
+        id: data[key].id,
+        address: data[key].address,
+        name: data[key].name,
+        menu: data[key].menu,
+        closeTime: data[key].closeTime,
+        openTime: data[key].openTime,
+        telephone: data[key].telephone,
+        kitchenImg: data[key].kitchenImg,
+        dangol: data[key].dangol,
+        distance: data[key].distance,
+        today: data[key].today,
+      });
+    }
+    setKitchen(loadedKitchen);
+  }, []);
+  useEffect(() => {
+    fetchKitchenHandler();
+  }, [fetchKitchenHandler]);
 
   const selectDistance = (event) => {
     setDistance(event.target.value);
   };
+
 
   return (
     <div>
