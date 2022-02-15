@@ -13,7 +13,10 @@ const KitchenAdd = () => {
         <input placeholder="식당 이름" className={styles.input} />
         <input placeholder="전화번호" className={styles.input} />
         <input placeholder="주소" className={styles.input} />
-        <input placeholder="운영 시간" className={styles.input} />
+        <span className={styles.time}>
+          <input placeholder="영업 시작 시간" className={styles.openTime} />
+          <input placeholder="영업 마감 시간" className={styles.closeTime} />
+        </span>
         <button className={styles.registerButton}>등록하기</button>
       </form>
     </div>
