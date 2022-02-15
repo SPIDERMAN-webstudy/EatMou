@@ -1,0 +1,62 @@
+.content {
+  display: flex;
+  border: 3px solid coral;
+  margin: 1rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+.content img {
+  flex: 2;
+  cursor: pointer;
+  max-width: 15rem;
+  max-height: 20rem;
+}
+.content div {
+  flex: 8;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid coral;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+.head h2 {
+  padding-left: 1rem;
+  font-size: 3rem;
+}
+.head span {
+  font-size: 3rem;
+  padding-right: 1rem;
+}
+.Today {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+.time {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.bottom {
+  padding-left: 1rem;
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.2rem;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+.cursor:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+  cursor: pointer;
+}
