@@ -1,0 +1,74 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.back {
+  text-align: left;
+  background-color: white;
+  border: none;
+  color: #ff6e2e;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.back:hover {
+  text-decoration: underline;
+}
+.Search {
+  width: 85%;
+
+  margin-bottom: 1rem;
+  display: flex;
+}
+.Search input {
+  flex: 9;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  outline: none;
+  /* 네이버 */
+  border: 5px solid rgb(41, 212, 70);
+  margin-left: 7rem;
+}
+.Search button {
+  flex: 1;
+  font-size: 3rem;
+  box-shadow: none;
+  cursor: pointer;
+  /* 네이버 */
+  background-color: rgb(41, 212, 70);
+}
+
+.add {
+  width: 85%;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  border: none;
+  color: #ff6e2e;
+  font-weight: bold;
+  cursor: pointer;
+}
+.add:hover {
+  text-decoration: underline;
+}
+.select {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 1rem;
+}
+.select button {
+  margin: 0.3rem;
+  font-size: 1.3rem;
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.select button:hover {
+  text-decoration: underline;
+}
+.color {
+  color: #ff6e2e;
+}

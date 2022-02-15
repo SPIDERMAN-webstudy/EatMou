@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import SearchKitchenList from "./SearchKitchenList";
+import styles from "./Search.module.css";
+import { GoSearch } from "react-icons/go";
 const Search = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -86,29 +88,47 @@ const Search = () => {
     setSortedKitchen(temp);
   };
   const backHandler = () => {
-    navigate("/");
+    navigate("/", { state: kitchenInput });
   };
   const addHandler = () => {
-    navigate("/Kitchenadd");
+    navigate("/Kitchenadd", { state: kitchenInput });
   };
   return (
-    <React.Fragment>
-      <button onClick={backHandler}>back</button>
-      <form onSubmit={submitHandler}>
-        <Input
-          placeholder="식당 이름 검색하기"
-          value={kitchenInput}
-          onChange={inputHandler}
-        />
-        <Button type="submit">검색</Button>
-      </form>
-      <button onClick={addHandler}>내가 아는 식당이 나오지 않는다면?</button>
-      <br />
-      <div>
-        <button onClick={distanceButtonHandler}>거리순</button>
-        <button onClick={dangolButtonHandler}>단골순</button>
-      </div>
-      <div>
+    <div className={styles.body}>
+      <header className={styles.layout}>
+        <button className={styles.back} onClick={backHandler}>
+          Back
+        </button>
+        <form className={styles.Search} onSubmit={submitHandler}>
+          <Input
+            placeholder="식당 이름 검색하기"
+            value={kitchenInput}
+            onChange={inputHandler}
+          />
+          <Button className={styles.searchBtn} type="submit">
+            <GoSearch />
+          </Button>
+        </form>
+
+        <button className={styles.add} onClick={addHandler}>
+          내가 아는 식당이 나오지 않는다면?
+        </button>
+        <div className={styles.select}>
+          <button
+            className={`${method ? styles.color : ""}`}
+            onClick={distanceButtonHandler}
+          >
+            거리순
+          </button>
+          <button
+            className={`${!method ? styles.color : ""}`}
+            onClick={dangolButtonHandler}
+          >
+            단골순
+          </button>
+        </div>
+      </header>
+      <main>
         {sortedKitchen.map((item) => (
           <SearchKitchenList
             img={item.kitchenImg}
@@ -124,8 +144,8 @@ const Search = () => {
             today={item.today}
           />
         ))}
-      </div>
-    </React.Fragment>
+      </main>
+    </div>
   );
 };
 export default Search;

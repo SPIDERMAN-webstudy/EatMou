@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "./SearchKitchenList.module.css";
 const SearchKitchenList = (props) => {
   const [show, setshow] = useState(true);
   const DANGOL = "Dangol";
@@ -47,28 +48,38 @@ const SearchKitchenList = (props) => {
     setshow(true);
   };
   return (
-    <React.Fragment>
-      <img src={props.img} />
-      <div>
-        <h3 onClick={infoHandler}>
-          {props.name} 거리:{props.distance}
-        </h3>
-        {show && <span onClick={boneHandler}>🦴 {props.dangol}</span>}
-        {!show && (
-          <span onClick={boneCancelHandler}>🦴채워짐 {props.dangol + 1}</span>
-        )}
-        <span>
+    <div className={styles.content}>
+      <img src={props.img} onClick={infoHandler} />
+      <div className={styles.info}>
+        <div className={styles.head}>
+          <h2>{props.name}</h2>
+          {show && (
+            <span className={styles.cursor} onClick={boneHandler}>
+              🦴 {props.dangol}
+            </span>
+          )}
+          {!show && (
+            <span className={styles.cursor} onClick={boneCancelHandler}>
+              🍖 {props.dangol + 1}
+            </span>
+          )}
+        </div>
+        <span className={styles.Today}>
+          Today:
           {props.today.map((value) => (
-            <div key={Math.random()}>{value}</div>
+            <span key={Math.random()}>{value}/</span>
           ))}
         </span>
-        <span>
+        <span className={styles.time}>
           {props.openTime}~{props.closeTime}
         </span>
-        <span>{props.address}</span>
-        <span>{props.telephone}</span>
+        <div className={styles.bottom}>
+          <span>{props.address}</span>
+          <span>Tel:{props.telephone}</span>
+          <span>거리:{props.distance}</span>
+        </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 export default SearchKitchenList;
