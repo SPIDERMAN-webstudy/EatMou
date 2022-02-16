@@ -41,7 +41,7 @@ const KitchenInfo = () => {
   }, [fetchKitchenHandler]);
 
   let dong = kitchenDate.filter((val) => {
-    if (parseInt(val.id) === 124) {
+    if (parseInt(val.id) === 123) {
       return val;
     }
   });
@@ -56,8 +56,8 @@ const KitchenInfo = () => {
         back
       </div>
       {dong.map((item) => (
-        <div>
-          <img src={item.kitchenImg} className={styles.img} />
+        <div key={Math.random()}>
+          <img src={item.kitchenImg} className={styles.img} alt={item.name} />
           <Title
             id={item.id}
             key={Math.random()}
@@ -69,9 +69,9 @@ const KitchenInfo = () => {
             telephone={item.telephone}
           />
           <hr className={styles.line}></hr>
-          <Today today={item.today} />
+          <Today key={Math.random()} today={item.today} />
           <hr className={styles.line}></hr>
-          <Menu menu={item.menu} />
+          <Menu key={Math.random()} menu={item.menu} />
         </div>
       ))}
     </div>
