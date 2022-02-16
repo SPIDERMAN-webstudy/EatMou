@@ -17,7 +17,7 @@ const DangolItem = () => {
     <React.Fragment>
       {show && (
         <div>
-          {kitchenData.map((item) => (
+          {kitchenData?.map((item) => (
             <Card>
               <span id={item.id} key={Math.random()}>
                 <div onClick={infoHandler}>{item.name}</div>
@@ -25,7 +25,7 @@ const DangolItem = () => {
                   {item.openTime}~{item.closeTime}
                 </div>
                 <div>
-                  {item.today.map((menu) => (
+                  {item.today?.map((menu) => (
                     <div id={item.id} key={Math.random()}>
                       {menu}
                     </div>
