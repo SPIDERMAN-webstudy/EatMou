@@ -129,7 +129,7 @@ const Search = () => {
         </div>
       </header>
       <main>
-        {sortedKitchen.map((item) => (
+        {sortedKitchen?.map((item) => (
           <SearchKitchenList
             img={item.kitchenImg}
             id={item.id}

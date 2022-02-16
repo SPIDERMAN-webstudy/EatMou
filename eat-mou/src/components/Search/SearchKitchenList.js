@@ -66,7 +66,7 @@ const SearchKitchenList = (props) => {
         </div>
         <span className={styles.Today}>
           Today:
-          {props.today.map((value) => (
+          {props.today?.map((value) => (
             <span key={Math.random()}>{value}/</span>
           ))}
         </span>
