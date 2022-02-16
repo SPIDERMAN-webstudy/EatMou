@@ -1,5 +1,5 @@
 import styles from "./KitchenInfo.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Title from "./Title";
 import Today from "./Today";
@@ -9,12 +9,18 @@ import { useSelector } from "react-redux";
 const KitchenInfo = (props) => {
   const kitchenData = useSelector((state) => state);
   const dong = kitchenData[0];
+  const navigate = useNavigate();
+
+  const gobackHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div className={styles.info}>
       <img src={dong.kitchenImg} className={styles.img} />
-      <Link to={"../search"} className={styles.back}>
+      <div className={styles.back} onClick={gobackHandler}>
         back
-      </Link>
+      </div>
       <div className={styles.bg}>
         <Title />
         <hr className={styles.line}></hr>
