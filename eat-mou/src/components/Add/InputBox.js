@@ -1,6 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import PropTypes from 'prop-types';
 
-const InputBox = () => {
+const InputBox = ({ todayList, setTodayList }) => {
   const [text, setText] = useState("");
   const inputRef = useRef(null);
 
@@ -9,9 +10,19 @@ const InputBox = () => {
   };
 
   const onClickHandler = () => {
+    const nextFood = todayList.concat({
+      id: todayList.length,
+      text,
+    });
+    setTodayList(nextFood);
+
     setText("");
     inputRef.current.focus();
   };
+
+  useEffect(() => {
+    console.log(todayList);
+  }, [todayList]);
 
   return (
     <div>
@@ -27,6 +38,16 @@ const InputBox = () => {
       </button>
     </div>
   );
+};
+
+InputBox.propTypes = {
+  todayList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    }).isRequired
+  ),
+  setTodayList: PropTypes.func.isRequired,
 };
 
 export default InputBox;
