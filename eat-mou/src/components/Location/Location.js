@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import {Link} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import styles from "./Location.module.css"
+import styles from "./Location.module.css";
 import LocationKitchenList from "./LocationKitchenList";
 
 const Location = (props) => {
@@ -9,6 +9,7 @@ const Location = (props) => {
 
   const [distance, setDistance] = useState(100);
 
+  //------------------------firebase로부터 데이터 GET해오기---------------------------------------
   const fetchKitchenHandler = useCallback(async () => {
     const response = await fetch(
       "https://react-http-184dd-default-rtdb.asia-southeast1.firebasedatabase.app/kitchen.json"
@@ -36,11 +37,35 @@ const Location = (props) => {
   useEffect(() => {
     fetchKitchenHandler();
   }, [fetchKitchenHandler]);
+  //----------------------------firebase에 포스트 하기-------------------------------------------
+  // const navigate = useNavigate();
 
+  // async function addKitchenHandler(kitchen) {
+  //   const response = await fetch(
+  //     "https://react-http-184dd-default-rtdb.asia-southeast1.firebasedatabase.app/kitchen.json",
+  //     {
+  //       method: "POST",
+  //       body: JSON.stringify(kitchen),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     }
+  //   );
+  //   const data = await response.json();
+  //   console.log(data);
+  // }
+
+  // const onClickHandler = () => {
+  //   navigate("../KitchenAdd", { state: addKitchenHandler() });
+  // };
+  //-------------------------------Link를 통해 props값 넘기기-----------------------------------
+  // navigate("../KitchenAdd", { state: addKitchenHandler() });
+
+  //-------------------select에서 선택한 거리 설정----------------------------------------------
   const selectDistance = (event) => {
     setDistance(event.target.value);
   };
-
+  //------------------------------------------------------------------------------------------
 
   return (
     <div>
