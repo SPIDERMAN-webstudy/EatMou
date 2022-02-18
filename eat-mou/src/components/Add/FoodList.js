@@ -3,19 +3,20 @@ import Food from "./Food";
 import PropTypes from "prop-types";
 
 const FoodList = ({ title, todayList, setTodayList }) => {
+  console.log(todayList);
   return (
     <div>
         <p>{title}</p>
       <ul>
         {todayList &&
-          todayList.map((today) => {
+          todayList.map((today) => (
             <Food
               key={today.id}
               today={today}
               todayList={todayList}
               setTodayList={setTodayList}
-            />;
-          })}
+            />
+          ))}
       </ul>
     </div>
   );
