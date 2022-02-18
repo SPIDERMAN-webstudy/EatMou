@@ -50,11 +50,18 @@ const KitchenInfo = () => {
     navigate(-1);
   };
 
+  const editHandler = () => {
+    navigate("/Kitchenadd");
+  };
+
   return (
     <div className={styles.info}>
-      <div className={styles.back} onClick={gobackHandler}>
+      <span className={styles.back} onClick={gobackHandler}>
         back
-      </div>
+      </span>
+      <span className={styles.edit} onClick={editHandler}>
+        edit
+      </span>
       {dong.map((item) => (
         <div key={Math.random()}>
           <img src={item.kitchenImg} className={styles.img} alt={item.name} />
