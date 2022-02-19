@@ -16,12 +16,23 @@
 }
 
 .back {
-  position: absolute;
-  top: 2.5rem;
-  left: 50rem;
+  text-align: left;
+  position: relative;
+  top: 5rem;
+  right: 10rem;
   color: #ff6e2e;
   font-size: 1.3rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.edit {
   text-align: left;
+  position: relative;
+  top: 3.4rem;
+  left: 10rem;
+  color: #ff6e2e;
+  font-size: 1.3rem;
   text-decoration: none;
   cursor: pointer;
 }

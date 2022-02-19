@@ -1,16 +1,20 @@
-import { useSelector } from "react-redux";
+import React from "react";
 
 import MenuCard from "../UI/MenuCard";
+
 import styles from "./Menu.module.css";
 
 const Menu = (props) => {
-  const kitchenData = useSelector((state) => state);
-  const dong = kitchenData[0].menu;
+  props.menu.map((item) => console.log(item.menuImg));
   return (
     <div>
-      {dong.map((item) => (
-        <MenuCard key={item.id}>
-          <img src={item.menuImg} className={styles.menuImg} />
+      {props.menu?.map((item) => (
+        <MenuCard id={item.id} key={Math.random()}>
+          <img
+            src={item.menuImg}
+            alt={item.menuName}
+            className={styles.menuImg}
+          />
           <div className={styles.menuName}>{item.menuName}</div>
           <div className={styles.menuPrice}>{item.menuPrice}</div>
         </MenuCard>

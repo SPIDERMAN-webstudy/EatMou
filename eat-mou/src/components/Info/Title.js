@@ -1,12 +1,9 @@
-import { useSelector } from "react-redux";
 import { useState } from "react";
 
 import styles from "./Title.module.css";
 
 const Title = (props) => {
   const [active, setActive] = useState(true);
-  const kitchenData = useSelector((state) => state);
-  const dong = kitchenData[0];
 
   const dangolchangeHandler = () => {
     setActive(false);
@@ -18,8 +15,8 @@ const Title = (props) => {
 
   return (
     <div>
-      <span className={styles.name}>{dong.name}</span>
-      <span className={styles.dangol}>{dong.dangol}</span>
+      <span className={styles.name}>{props.name}</span>
+      <span className={styles.dangol}>{props.dangol}</span>
       {active && (
         <h2 onClick={dangolchangeHandler} className={styles.bone}>
           🦴
@@ -31,11 +28,11 @@ const Title = (props) => {
         </h2>
       )}
       <span className={styles.time}>
-        {dong.openTime}~{dong.closeTime}
+        {props.openTime}~{props.closeTime}
       </span>
       <br />
-      <span className={styles.address}>{dong.address}</span>
-      <span className={styles.telephone}>{dong.telephone}</span>
+      <span className={styles.address}>{props.address}</span>
+      <span className={styles.telephone}>{props.telephone}</span>
     </div>
   );
 };

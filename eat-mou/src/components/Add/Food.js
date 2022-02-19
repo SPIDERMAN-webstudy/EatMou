@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Food = ({today, todayList, setTodayList}) => {
+  console.log(today.text);
   return (
     <li>
       <span>{today.text}</span>

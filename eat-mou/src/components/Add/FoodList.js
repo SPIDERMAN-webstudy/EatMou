@@ -3,6 +3,7 @@ import Food from "./Food";
 import PropTypes from "prop-types";
 
 const FoodList = ({ title, todayList, setTodayList }) => {
+  console.log(todayList);
   return (
     <div>
       <div>{title}</div>
