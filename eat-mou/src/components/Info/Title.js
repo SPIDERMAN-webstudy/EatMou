@@ -14,7 +14,7 @@ const Title = (props) => {
   };
 
   return (
-    <div>
+    <div className={styles.title}>
       <span className={styles.name}>{props.name}</span>
       <span className={styles.dangol}>{props.dangol}</span>
       {active && (
@@ -27,6 +27,7 @@ const Title = (props) => {
           🍖
         </h2>
       )}
+      <br />
       <span className={styles.time}>
         {props.openTime}~{props.closeTime}
       </span>
