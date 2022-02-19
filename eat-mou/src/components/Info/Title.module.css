@@ -1,40 +1,25 @@
+.title {
+  text-align: center;
+}
+
 .name {
-  width: 223px;
-  height: 34.4px;
-  flex-grow: 0;
-  margin: 129.5px 60px 0 3px;
-  font-size: 32px;
-  text-align: left;
-  color: #000;
+  display: inline;
+  margin: 0 4rem 0 0;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .dangol {
-  margin: 0 20px 0 0;
-  font-size: 25px;
+  margin: 0 1rem 0 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .bone {
-  flex-grow: 0;
   cursor: pointer;
   display: inline;
-  margin: 0 30px 0 0;
-}
-
-.time,
-.address {
-  flex-grow: 0;
-  margin: 0 0 13.8px 3px;
-  font-size: 12px;
-  text-align: left;
-  color: #000;
 }
 
 .telephone {
-  width: 122px;
-  height: 21px;
-  flex-grow: 0;
-  margin: 80px 13px 13.7px 80px;
-  font-size: 12px;
-  text-align: right;
-  color: #000;
+  margin: 0 0 0 5rem;
 }
