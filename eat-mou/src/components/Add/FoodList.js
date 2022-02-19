@@ -5,29 +5,30 @@ import PropTypes from "prop-types";
 const FoodList = ({ title, todayList, setTodayList }) => {
   return (
     <div>
-        <p>{title}</p>
+      <div>{title}</div>
       <ul>
         {todayList &&
-          todayList.map((today) => {
+          todayList.map((today) => (
             <Food
               key={today.id}
               today={today}
               todayList={todayList}
               setTodayList={setTodayList}
-            />;
-          })}
+            />
+          ))}
       </ul>
     </div>
   );
 };
 FoodList.prototype = {
-    title: PropTypes.string.isRequired,
-    todayList:PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired, text: PropTypes.string.isRequired,
-        })
-    ),
-    setTodayList: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  todayList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ),
+  setTodayList: PropTypes.func.isRequired,
 };
 
 export default FoodList;
