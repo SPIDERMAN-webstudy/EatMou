@@ -6,7 +6,7 @@ const FoodList = ({ title, todayList, setTodayList }) => {
   console.log(todayList);
   return (
     <div>
-        <p>{title}</p>
+      <div>{title}</div>
       <ul>
         {todayList &&
           todayList.map((today) => (
@@ -22,13 +22,14 @@ const FoodList = ({ title, todayList, setTodayList }) => {
   );
 };
 FoodList.prototype = {
-    title: PropTypes.string.isRequired,
-    todayList:PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired, text: PropTypes.string.isRequired,
-        })
-    ),
-    setTodayList: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  todayList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ),
+  setTodayList: PropTypes.func.isRequired,
 };
 
 export default FoodList;

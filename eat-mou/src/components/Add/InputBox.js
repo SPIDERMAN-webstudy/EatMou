@@ -18,6 +18,7 @@ const InputBox = ({ todayList, setTodayList }) => {
 
     setText("");
     inputRef.current.focus();
+    console.log(inputRef.current.value);
   };
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const InputBox = ({ todayList, setTodayList }) => {
         placeholder="오늘의 반찬을 입력해주세요"
         onChange={onChangeInput}
       />
-      <button type="submit" onClick={onClickHandler}>
+      <button type="button" onClick={onClickHandler}>
         추가
       </button>
     </div>

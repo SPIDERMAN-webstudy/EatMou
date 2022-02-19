@@ -18,6 +18,9 @@ const KitchenAdd = (props) => {
   const openTimeRef = useRef("");
   const telephoneRef = useRef("");
   const todayRef = useRef([]);
+  //------------------------------Today음식 추가리스트 만들기----------------------------------------------
+  const [todayList, setTodayList] = useState([]);
+  // todayList = useRef([]);
   //--------------------------firebase에 데이터 POST하기---------------------------------
   async function addKitchenHandler(kitchen) {
     const response = await fetch(
@@ -50,19 +53,18 @@ const KitchenAdd = (props) => {
       menu: menuRef.current.value,
       today: todayRef.current.value,
     };
-
+    console.log(todayRef.current.value);
     addKitchenHandler(kitchen);
+    event.target.reset();
     console.log(kitchen);
   };
-  //------------------------------Today음식 추가리스트 만들기----------------------------------------------
-  const [todayList, setTodayList] = useState([]);
   //---------------------------------------------------------------------------------------------------------
   return (
     <div>
       <Link to={"../location"}>
         <button className={styles.button}>Back</button>
       </Link>
-      <form className={styles.form} onSubmit={submitHandler} ref={idRef}>
+      <form className={styles.form} ref={idRef} onSubmit={submitHandler}>
         <div className={styles.picture} ref={kitchenImgRef}>
           식당 사진을 추가해 주세요
         </div>
@@ -85,16 +87,21 @@ const KitchenAdd = (props) => {
             ref={closeTimeRef}
           />
         </span>
+        <div>
+          <InputBox
+            todayList={todayList}
+            setTodayList={setTodayList}
+            ref={todayList}
+          />
+          <FoodList
+            title={"-오늘의 메뉴-"}
+            todayList={todayList}
+            setTodayList={setTodayList}
+            ref={todayRef}
+          />
+        </div>
         <button className={styles.registerButton}>등록하기</button>
       </form>
-      <div>
-        <InputBox todayList={todayList} setTodayList={setTodayList} />
-        <FoodList
-          title={"-오늘의 메뉴-"}
-          todayList={todayList}
-          setTodayList={setTodayList}
-        />
-      </div>
     </div>
   );
 };
