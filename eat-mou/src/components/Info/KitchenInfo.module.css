@@ -1,38 +1,27 @@
+.media {
+  padding: 0 5%;
+}
+
 .info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.bg {
-  width: 25rem;
-  padding: 0.6rem 0.3rem 3rem 0.3rem;
-  background-color: rgb(255, 255, 255);
 }
 
 .img {
-  width: 25rem;
+  width: 100%;
   height: 16rem;
 }
 
 .back {
-  text-align: left;
-  position: relative;
-  top: 5rem;
-  right: 10rem;
+  cursor: pointer;
   color: #ff6e2e;
   font-size: 1.3rem;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .edit {
-  text-align: left;
-  position: relative;
-  top: 3.4rem;
-  left: 10rem;
+  padding: 0 5% 0 95%;
+  cursor: pointer;
   color: #ff6e2e;
   font-size: 1.3rem;
-  text-decoration: none;
-  cursor: pointer;
 }
