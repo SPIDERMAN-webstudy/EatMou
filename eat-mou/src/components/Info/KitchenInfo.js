@@ -55,32 +55,34 @@ const KitchenInfo = () => {
   };
 
   return (
-    <div className={styles.info}>
+    <div className={styles.media}>
       <span className={styles.back} onClick={gobackHandler}>
         back
       </span>
       <span className={styles.edit} onClick={editHandler}>
         edit
       </span>
-      {dong.map((item) => (
-        <div key={Math.random()}>
-          <img src={item.kitchenImg} className={styles.img} alt={item.name} />
-          <Title
-            id={item.id}
-            key={Math.random()}
-            openTime={item.openTime}
-            closeTime={item.closeTime}
-            name={item.name}
-            dangol={item.dangol}
-            address={item.address}
-            telephone={item.telephone}
-          />
-          <hr className={styles.line}></hr>
-          <Today key={Math.random()} today={item.today} />
-          <hr className={styles.line}></hr>
-          <Menu key={Math.random()} menu={item.menu} />
-        </div>
-      ))}
+      <div className={styles.info}>
+        {dong.map((item) => (
+          <div key={Math.random()}>
+            <img src={item.kitchenImg} className={styles.img} alt={item.name} />
+            <Title
+              id={item.id}
+              key={Math.random()}
+              openTime={item.openTime}
+              closeTime={item.closeTime}
+              name={item.name}
+              dangol={item.dangol}
+              address={item.address}
+              telephone={item.telephone}
+            />
+            <hr className={styles.line}></hr>
+            <Today key={Math.random()} today={item.today} />
+            <hr className={styles.line}></hr>
+            <Menu key={Math.random()} menu={item.menu} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
