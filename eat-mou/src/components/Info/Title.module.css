@@ -6,18 +6,13 @@
   display: inline;
   margin: 0 4rem 0 0;
   font-size: 2rem;
-  font-weight: bold;
 }
 
 .dangol {
   margin: 0 1rem 0 0;
   font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.bone {
-  cursor: pointer;
   display: inline;
+  cursor: pointer;
 }
 
 .telephone {

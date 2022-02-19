@@ -15,16 +15,15 @@ const Title = (props) => {
 
   return (
     <div className={styles.title}>
-      <span className={styles.name}>{props.name}</span>
-      <span className={styles.dangol}>{props.dangol}</span>
+      <h1 className={styles.name}>{props.name}</h1>
       {active && (
-        <h2 onClick={dangolchangeHandler} className={styles.bone}>
-          🦴
+        <h2 onClick={dangolchangeHandler} className={styles.dangol}>
+          {props.dangol} 🦴
         </h2>
       )}
       {!active && (
-        <h2 onClick={dangolcancelHandler} className={styles.bone}>
-          🍖
+        <h2 onClick={dangolcancelHandler} className={styles.dangol}>
+          {props.dangol + 1} 🍖
         </h2>
       )}
       <br />
