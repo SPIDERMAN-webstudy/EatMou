@@ -1,12 +1,14 @@
 .menuName {
-  flex-grow: 0;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .menuImg {
-  width: 200px;
-  height: 200px;
-  flex-grow: 0;
-  margin: 17.7px 10px 20px 0;
-  padding: 0 0 3px;
+  width: 13rem;
+  height: 13rem;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1% 5%;
 }

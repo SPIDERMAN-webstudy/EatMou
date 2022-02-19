@@ -7,7 +7,7 @@ import styles from "./Menu.module.css";
 const Menu = (props) => {
   props.menu.map((item) => console.log(item.menuImg));
   return (
-    <div>
+    <div className={styles.menu}>
       {props.menu?.map((item) => (
         <MenuCard id={item.id} key={Math.random()}>
           <img
