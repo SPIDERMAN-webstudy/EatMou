@@ -51,7 +51,7 @@ const KitchenAdd = (props) => {
       id: idRef.current.value, // 랜덤값
       kitchenImg: kitchenImgRef.current.value, //일단 아무거나
       menu: menuRef.current.value,
-      today: todayRef.current.value,
+      today: todayList,
     };
     console.log(todayRef.current.value);
     addKitchenHandler(kitchen);
@@ -91,13 +91,11 @@ const KitchenAdd = (props) => {
           <InputBox
             todayList={todayList}
             setTodayList={setTodayList}
-            ref={todayList}
           />
           <FoodList
             title={"-오늘의 메뉴-"}
             todayList={todayList}
             setTodayList={setTodayList}
-            ref={todayRef}
           />
         </div>
         <button className={styles.registerButton}>등록하기</button>
