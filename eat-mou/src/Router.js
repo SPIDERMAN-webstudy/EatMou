@@ -10,7 +10,7 @@ function RouterBase() {
       <Routes>
         <Route path="/search" element={<Search />} />
         <Route path="/location" element={<Location />} />
-        <Route path="/KitchenAdd" element={<KitchenAdd/>}/>
+        <Route path="/KitchenAdd" element={<KitchenAdd />} />
         <Route path="/kitchen/:id" element={<KitchenInfo />} />
         <Route path="/" element={<App />} />
       </Routes>

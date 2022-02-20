@@ -5,11 +5,12 @@ import styles from "./KitchenInfo.module.css";
 import Title from "./Title";
 import Today from "./Today";
 import Menu from "./Menu";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const KitchenInfo = () => {
   const [kitchenDate, setKitchenDate] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const fetchKitchenHandler = useCallback(async () => {
     const response = await fetch(
@@ -41,7 +42,7 @@ const KitchenInfo = () => {
   }, [fetchKitchenHandler]);
 
   let dong = kitchenDate.filter((val) => {
-    if (parseInt(val.id) === 123) {
+    if (parseInt(val.id) === location.state) {
       return val;
     }
   });
