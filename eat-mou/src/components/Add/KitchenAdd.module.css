@@ -2,19 +2,33 @@
   display: flex;
   flex-direction: column;
 }
-.picture{
-  height:10rem;
-  flex-grow:1;
-  text-align: center;
-  line-height: 160px;
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 10%;
-  margin-top: 5%;
+.pictureForm {
+  /* width: 400px;
+    height: 200px;
+  
   border: 0.2px solid #ff6e2e;
   color:#ff6e2e;
-  font-size:1.5rem;
+  flex-direction: column;
+  justify-content: space-between; */
+  width:600px;
+    height:220px;
+    overflow:hidden;
+    margin:0 auto;
 }
+.picture{
+  display:none;
+}
+.pictureLabel{
+  position:absolute;
+  margin-left: 35%;
+}
+.fileImage{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+}
+
 .button{
   background-color: transparent;
   color: white;
