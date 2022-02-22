@@ -58,22 +58,28 @@ const KitchenAdd = (props) => {
     event.target.reset();
     console.log(kitchen);
   };
-//---------------------------------식당 사진 업로드--------------------------------------------------------------------------------------------
-const [fileImage, setFileImage] = useState("");
+  //---------------------------------식당 사진 업로드--------------------------------------------------------------------------------------------
+  const [fileImage, setFileImage] = useState("");
+  const [fileIsValid, setFIleIsValid] = useState(false);
 
-//파일 저장
-const saveFileImage = (e) =>{
-  setFileImage(URL.createObjectURL(e.target.files[0]));
-  // kitchenImgRef(URL.createObjectURL(e.target.files[0]));
-  console.log(kitchenImgRef.current.value);
-  console.log(fileImage);
-};
-//파일 삭제
-const deleteFileImage = ()=>{
-  URL.revokeObjectURL(fileImage);
-  setFileImage("");
-  // kitchenImgRef("");
-};
+  // if(fileImage!==""){
+  //   setFIleIsValid(true);
+  // }
+
+  //파일 저장
+  const saveFileImage = (e) => {
+    setFileImage(URL.createObjectURL(e.target.files[0]));
+    // kitchenImgRef(URL.createObjectURL(e.target.files[0]));
+    setFIleIsValid(true);
+    console.log(kitchenImgRef.current.value);
+    console.log(fileImage);
+  };
+  //파일 삭제
+  const deleteFileImage = () => {
+    URL.revokeObjectURL(fileImage);
+    setFileImage("");
+    // kitchenImgRef("");
+  };
 
   //---------------------------------------------------------------------------------------------------------
   return (
@@ -82,20 +88,31 @@ const deleteFileImage = ()=>{
         <button className={styles.button}>Back</button>
       </Link>
       <form className={styles.form} ref={idRef} onSubmit={submitHandler}>
-        <form className={styles.pictureForm}>
-          <div className={styles.fileImage}>{fileImage && <img alt="sample" src={fileImage} />}</div>
-          <label htmlFor="file" className={styles.pictureLabel}>
-            식당 사진을 추가해주세요.
-          </label>
-          <input
-            id="file"
-            type="file"
-            className={styles.picture}
-            ref={kitchenImgRef}
-            placeholder="식당 사진을 추가해주세요"
-            onChange={saveFileImage}
-          />
-          {/* <button onClick={deleteFileImage}>삭제</button> */}
+        <form>
+          <form className={styles.pictureForm}>
+            {fileIsValid ? (
+              <img alt="sample" src={fileImage} className={styles.fileImage} />
+            ) : (
+              <label htmlFor="file" className={styles.pictureLabel}>
+                식당 사진을 추가해주세요.
+              </label>
+            )}
+            <input
+              id="file"
+              type="file"
+              className={styles.picture}
+              ref={kitchenImgRef}
+              onChange={saveFileImage}
+            />
+          </form>
+          <div className={styles.imageButton}>
+            <label htmlFor="file" className={styles.pictureLabel3}>
+              식당 사진 추가
+            </label>
+            <button onClick={deleteFileImage} className={styles.pictureLabel3}>
+              삭제
+            </button>
+          </div>
         </form>
         <input placeholder="식당 이름" className={styles.input} ref={nameRef} />
         <input
