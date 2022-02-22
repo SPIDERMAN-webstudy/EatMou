@@ -58,6 +58,29 @@ const KitchenAdd = (props) => {
     event.target.reset();
     console.log(kitchen);
   };
+  //---------------------------------식당 사진 업로드--------------------------------------------------------------------------------------------
+  const [fileImage, setFileImage] = useState("");
+  const [fileIsValid, setFIleIsValid] = useState(false);
+
+  // if(fileImage!==""){
+  //   setFIleIsValid(true);
+  // }
+
+  //파일 저장
+  const saveFileImage = (e) => {
+    setFileImage(URL.createObjectURL(e.target.files[0]));
+    // kitchenImgRef(URL.createObjectURL(e.target.files[0]));
+    setFIleIsValid(true);
+    console.log(kitchenImgRef.current.value);
+    console.log(fileImage);
+  };
+  //파일 삭제
+  const deleteFileImage = () => {
+    URL.revokeObjectURL(fileImage);
+    setFileImage("");
+    // kitchenImgRef("");
+  };
+
   //---------------------------------------------------------------------------------------------------------
   return (
     <div>
@@ -65,9 +88,32 @@ const KitchenAdd = (props) => {
         <button className={styles.button}>Back</button>
       </Link>
       <form className={styles.form} ref={idRef} onSubmit={submitHandler}>
-        <div className={styles.picture} ref={kitchenImgRef}>
-          식당 사진을 추가해 주세요
-        </div>
+        <form>
+          <form className={styles.pictureForm}>
+            {fileIsValid ? (
+              <img alt="sample" src={fileImage} className={styles.fileImage} />
+            ) : (
+              <label htmlFor="file" className={styles.pictureLabel}>
+                식당 사진을 추가해주세요.
+              </label>
+            )}
+            <input
+              id="file"
+              type="file"
+              className={styles.picture}
+              ref={kitchenImgRef}
+              onChange={saveFileImage}
+            />
+          </form>
+          <div className={styles.imageButton}>
+            <label htmlFor="file" className={styles.pictureLabel3}>
+              식당 사진 추가
+            </label>
+            <button onClick={deleteFileImage} className={styles.pictureLabel3}>
+              삭제
+            </button>
+          </div>
+        </form>
         <input placeholder="식당 이름" className={styles.input} ref={nameRef} />
         <input
           placeholder="전화번호"
@@ -88,10 +134,7 @@ const KitchenAdd = (props) => {
           />
         </span>
         <div>
-          <InputBox
-            todayList={todayList}
-            setTodayList={setTodayList}
-          />
+          <InputBox todayList={todayList} setTodayList={setTodayList} />
           <FoodList
             title={"-오늘의 메뉴-"}
             todayList={todayList}
