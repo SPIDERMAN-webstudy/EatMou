@@ -43,7 +43,10 @@
   width: 25%;
   margin: 0 auto;
   height: 20%;
-
+}
+.pictureLabel3:hover{
+  transform: scale(1.1);
+  transition: all 0.2s;
 }
 .imageButton{
   display: flex;

@@ -9,14 +9,19 @@ const FoodList = ({ title, todayList, setTodayList }) => {
       <div>{title}</div>
       <ul>
         {todayList &&
-          todayList.map((today) => (
-            <Food
-              key={today.id}
-              today={today}
-              todayList={todayList}
-              setTodayList={setTodayList}
-            />
-          ))}
+          todayList.map((today) => {
+            if(today.deleted){
+              return null;
+            }
+            return (
+              <Food
+                key={today.id}
+                today={today}
+                todayList={todayList}
+                setTodayList={setTodayList}
+              />
+            );
+})}
       </ul>
     </div>
   );
