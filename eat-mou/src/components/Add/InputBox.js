@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+
+import styles from "./InputBox.module.css";
 import PropTypes from 'prop-types';
 
 const InputBox = ({ todayList, setTodayList }) => {
@@ -27,18 +29,24 @@ const InputBox = ({ todayList, setTodayList }) => {
   }, [todayList]);
 
   return (
-    <div>
-      <input
-        type="text"
-        value={text}
-        ref={inputRef}
-        placeholder="오늘의 반찬을 입력해주세요"
-        onChange={onChangeInput}
-      />
-      <button type="button" onClick={onClickHandler}>
-        추가
-      </button>
-    </div>
+    
+      <div className={styles.inputBox}>
+        <input
+          className={styles.input}
+          type="text"
+          value={text}
+          ref={inputRef}
+          placeholder="오늘의 반찬을 입력해주세요"
+          onChange={onChangeInput}
+        />
+        <button
+          className={styles.inputButton}
+          type="button"
+          onClick={onClickHandler}
+        >
+          추가
+        </button>
+      </div>
   );
 };
 

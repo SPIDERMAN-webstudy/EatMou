@@ -134,12 +134,15 @@ const KitchenAdd = (props) => {
           />
         </span>
         <div>
-          <InputBox todayList={todayList} setTodayList={setTodayList} />
-          <FoodList
-            title={"-오늘의 메뉴-"}
-            todayList={todayList}
-            setTodayList={setTodayList}
-          />
+          <div className={styles.todayTitle}>-오늘의 메뉴-</div>
+          <div className={styles.inputForm}>
+            <InputBox todayList={todayList} setTodayList={setTodayList} />
+            <FoodList
+              // title={"-오늘의 메뉴-"}
+              todayList={todayList}
+              setTodayList={setTodayList}
+            />
+          </div>
         </div>
         <button className={styles.registerButton}>등록하기</button>
       </form>

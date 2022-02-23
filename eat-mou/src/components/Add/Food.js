@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
+import styles from "./Food.module.css";
 
 const Food = ({today, todayList, setTodayList}) => {
   const [edited, setEdited] = useState(false);
@@ -44,23 +45,44 @@ const Food = ({today, todayList, setTodayList}) => {
   }
   
   return (
-    <li>
-      {edited ? <input type="text"
-      value={newText}
-      ref={editInputRef}
-      onChange={onChangeEditInput}
-      /> : <span>{today.text}</span>}
+    <div className={styles.list}>
       {edited ? (
-        <button type="button" onClick={onClickSubmitButton}>
-          확인
-        </button>
+        <input
+          type="text"
+          value={newText}
+          ref={editInputRef}
+          onChange={onChangeEditInput}
+        />
       ) : (
-        <button type="button" onClick={onClickEdit}>
-          수정
-        </button>
+        <span className={styles.today}>{today.text}</span>
       )}
-      <button type="button" onClick={onClickDeleteButton}>삭제</button>
-    </li>
+      <div className={styles.button}>
+        {edited ? (
+          <button
+            className={styles.OkButton}
+            type="button"
+            onClick={onClickSubmitButton}
+          >
+            확인
+          </button>
+        ) : (
+          <button
+            className={styles.OkButton}
+            type="button"
+            onClick={onClickEdit}
+          >
+            수정
+          </button>
+        )}
+        <button
+          className={styles.deleteButton}
+          type="button"
+          onClick={onClickDeleteButton}
+        >
+          삭제
+        </button>
+      </div>
+    </div>
   );
 };
 
