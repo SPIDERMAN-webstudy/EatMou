@@ -13,6 +13,7 @@ const InputBox = ({ todayList, setTodayList }) => {
     const nextFood = todayList.concat({
       id: todayList.length,
       text,
+      deleted: false,
     });
     setTodayList(nextFood);
 

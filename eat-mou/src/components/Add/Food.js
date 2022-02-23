@@ -32,7 +32,17 @@ const Food = ({today, todayList, setTodayList}) => {
 
     setEdited(false);
   }
-  //-------------------------------------------------------------------------------------------------
+  //----------------------------------delete 기능 구현---------------------------------------------------------------
+  const onClickDeleteButton = ()=>{
+    if(window.confirm('정말로 지우실건가요?')){
+      const nextTodayList = todayList.map((item)=>({
+        ...item,
+        deleted: item.id === today.id ? true : item.deleted,
+      }));
+      setTodayList(nextTodayList);
+    }
+  }
+  
   return (
     <li>
       {edited ? <input type="text"
@@ -49,7 +59,7 @@ const Food = ({today, todayList, setTodayList}) => {
           수정
         </button>
       )}
-      <button type="button">삭제</button>
+      <button type="button" onClick={onClickDeleteButton}>삭제</button>
     </li>
   );
 };
