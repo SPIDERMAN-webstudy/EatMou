@@ -82,11 +82,11 @@
 .input {
   flex-grow: 1;
   border: 0px;
-  border-bottom: 0.3rem solid #ff6e2e;
+  border-bottom: 0.3rem solid #f88656;
   box-sizing: border-box;
   font-size: 1.2rem;
   margin: 2%;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   margin-bottom: 10%;
 }
@@ -96,32 +96,35 @@
 .time {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+  margin-bottom:1%;
 }
 .openTime {
   flex-grow: 1;
   border: 0px;
-  border-bottom: 0.3rem solid #ff6e2e;
+  border-bottom: 0.3rem solid #f88656;
   box-sizing: border-box;
   font-size: 1.2rem;
   margin: 2%;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   margin-bottom: 10%;
-  margin-right: 3%;
+  margin-right: 15%;
+  text-align: center;
 }
 .closeTime {
   flex-grow: 1;
   border: 0px;
-  border-bottom: 0.3rem solid #ff6e2e;
+  border-bottom: 0.3rem solid #f88656;
   box-sizing: border-box;
   font-size: 1.2rem;
   margin: 2%;
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   margin-bottom: 10%;
   margin-left: 3%;
+  text-align: center;
 }
 .closeTime:focus {
   outline: none;
@@ -137,7 +140,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   border: 0ch;
-  box-shadow: 0 2px 4px rgb(182, 182, 182);
+  box-shadow: 0 2px 4px rgb(63, 62, 62);
   transition: all 0.2s;
   border-radius: 1rem;
   width: 25%;
@@ -147,4 +150,23 @@
 .registerButton:hover {
   transform: scale(1.1);
   transition: all 0.2s;
+}
+.todayTitle{
+  border-top:3px solid rgba(150, 149, 149, 0.616);
+  padding-top:3%;
+  width:90%;
+  margin:0 auto;
+  text-align: center;
+  color: #ff6e2e;
+  font-size: 1.3rem;
+  font-weight:600;
+  font-family: Roboto;
+  margin-bottom:3%;
+}
+.inputForm {
+  margin: 0 auto;
+  border: 1.6px solid rgb(46, 45, 45);
+  width: 50%;
+  height: 26rem;
+  margin-bottom:10%;
 }

@@ -1,0 +1,31 @@
+.list {
+    text-align:center;
+  /* list-style: none; */
+}
+
+.OkButton {
+  border: 0px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-family: Roboto;
+  background-color: #ff6e2e;
+  border-radius: 0.6rem;
+  margin-right:1%;
+}
+
+.deleteButton {
+  border: 0px;
+  background-color: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-family: Roboto;
+  background-color: #ff6e2e;
+  border-radius: 0.6rem;
+}
+.button{
+    margin-bottom:2%;
+}
+.today{
+    font-size:1.2rem;
+}
