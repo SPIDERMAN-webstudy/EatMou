@@ -47,12 +47,13 @@
   font-size: 1.6rem;
   font-weight: normal;
   text-align: center;
-  background: url("../../arrow_down.png")
-    no-repeat 95% 50%;
   border-radius: 0px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  padding-right:2.3rem;
+  background: url("../../arrow_down.png")
+    no-repeat 95% 50%/1.5rem auto;
   border-color: transparent;
   margin-bottom: 3%;
 }
