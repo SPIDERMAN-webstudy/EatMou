@@ -19,11 +19,24 @@ const DangolList = (props) => {
           {props.openTime}~{props.closeTime}
         </div>
         <div>
-          {props.today?.map((menu) => (
-            <div id={props.id} key={Math.random()}>
-              {menu}
+          {props.today !== undefined && (
+            <div>
+              {console.log(props.today[0].text)}
+              {props.today[0].text === undefined ? (
+                <span>
+                  {props.today?.map((value) => (
+                    <span key={Math.random()}>{value}/</span>
+                  ))}
+                </span>
+              ) : (
+                <span>
+                  {props.today?.map((value) => (
+                    <span key={Math.random()}>{value.text}/</span>
+                  ))}
+                </span>
+              )}
             </div>
-          ))}
+          )}
         </div>
       </span>
     </Card>
