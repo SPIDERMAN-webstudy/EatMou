@@ -13,7 +13,7 @@ const initialState = [
       {
         menuName: "주먹고기",
         menuPrice: 11000,
-        memuImg:
+        menuImg:
           "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151030_43%2F8205052ash_1446179500473jof8y_JPEG%2F%25B8%25B8%25C8%25AD_%25B0%25ED%25B1%25E2_%25282%2529.jpg&type=sc960_832",
       },
       {
@@ -45,7 +45,7 @@ const initialState = [
       {
         menuName: "고등어 한 상",
         menuPrice: 10000,
-        memuImg:
+        menuImg:
           "https://http://storage.enuri.info/pic_upload/knowbox2/202109/10153456920210905eeecfa97-17b5-4e9d-860e-91c1a0ee20d4.JPEGsearch.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20151030_43%2F8205052ash_1446179500473jof8y_JPEG%2F%25B8%25B8%25C8%25AD_%25B0%25ED%25B1%25E2_%25282%2529.jpg&type=sc960_832",
       },
       {
