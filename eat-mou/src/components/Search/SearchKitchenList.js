@@ -44,6 +44,10 @@ const SearchKitchenList = (props) => {
     setshow(false);
   };
   const boneCancelHandler = (event) => {
+    const prevData = JSON.parse(localStorage.getItem(DANGOL));
+    if (prevData !== null) {
+      bone = prevData;
+    }
     const d = event.target;
     const li = event.target.parentElement;
     const Delbone = bone.filter(function (element, index) {
