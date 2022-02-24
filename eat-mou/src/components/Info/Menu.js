@@ -5,11 +5,12 @@ import MenuCard from "../UI/MenuCard";
 import styles from "./Menu.module.css";
 
 const Menu = (props) => {
-  props.menu.map((item) => console.log(item.menuImg));
+  props.menu.map((item) => console.log(item));
   return (
     <div className={styles.menu}>
       {props.menu?.map((item) => (
         <MenuCard id={item.id} key={Math.random()}>
+          {console.log(item)}
           <img
             src={item.menuImg}
             alt={item.menuName}
