@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import InputBox from "./InputBox";
@@ -56,7 +56,7 @@ const KitchenAdd = (props) => {
     console.log(todayRef.current.value);
     addKitchenHandler(kitchen);
     event.target.reset();
-    console.log(kitchen);
+    console.log(nameRef);
   };
   //---------------------------------식당 사진 업로드--------------------------------------------------------------------------------------------
   const [fileImage, setFileImage] = useState("");
@@ -80,8 +80,45 @@ const KitchenAdd = (props) => {
     setFileImage("");
     // kitchenImgRef("");
   };
+//-----------------------폼유효성 검사 및 버튼 비활성화-----------------------------------------------------------
+const [isValid, setIsValid] = useState(false);
+const[name,setName]= useState("");
+const [address, setAddress] = useState("");
+const [openTime, setOpenTime] = useState("");
+const [closeTime, setCloseTime] = useState("");
+const [telphone, setTelephone] = useState("");
 
-  //---------------------------------------------------------------------------------------------------------
+const nameChange = (e)=>{
+  setName(e.target.value);
+}
+const addressChange = (e) => {
+  setAddress(e.target.value);
+};
+const oTimeChange = (e) => {
+  setOpenTime(e.target.value);
+};
+const cTimeChange = (e) => {
+  setCloseTime(e.target.value);
+};
+const telphoneChange = (e) =>{
+  setTelephone(e.target.value);
+}
+useEffect(()=>{
+if (
+  name.trim().length === 0 ||
+  address.trim().length === 0 ||
+  openTime.trim().length === 0 ||
+  closeTime.trim().length === 0 ||
+  telphone.trim().length === 0
+){
+  setIsValid(false);
+}
+else{
+  setIsValid(true);
+}
+console.log(isValid);
+// console.log(name.trim().length);
+},[name,address,openTime,closeTime,telphone])
   return (
     <div>
       <Link to={"../location"}>
@@ -114,20 +151,33 @@ const KitchenAdd = (props) => {
             </button>
           </div>
         </form>
-        <input placeholder="식당 이름" className={styles.input} ref={nameRef} />
         <input
+          onChange={nameChange}
+          placeholder="식당 이름"
+          className={styles.input}
+          ref={nameRef}
+        />
+        <input
+        onChange={telphoneChange}
           placeholder="전화번호"
           className={styles.input}
           ref={telephoneRef}
         />
-        <input placeholder="주소" className={styles.input} ref={addressRef} />
+        <input
+          onChange={addressChange}
+          placeholder="주소"
+          className={styles.input}
+          ref={addressRef}
+        />
         <span className={styles.time}>
           <input
+            onChange={oTimeChange}
             placeholder="영업 시작 시간"
             className={styles.openTime}
             ref={openTimeRef}
           />
           <input
+          onChange={cTimeChange}
             placeholder="영업 마감 시간"
             className={styles.closeTime}
             ref={closeTimeRef}
@@ -144,7 +194,7 @@ const KitchenAdd = (props) => {
             />
           </div>
         </div>
-        <button className={styles.registerButton}>등록하기</button>
+        <button disabled={!isValid}className={styles.registerButton}>등록하기</button>
       </form>
     </div>
   );
