@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Card from "../UI/Card";
+import DangolList from "./DangolList";
 const DangolItem = () => {
-  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const kitchenData = JSON.parse(localStorage.getItem("Dangol"));
   useEffect(() => {
@@ -10,29 +9,19 @@ const DangolItem = () => {
       setShow(false);
     } else setShow(true);
   }, [kitchenData]);
-  const infoHandler = () => {
-    navigate("/kitchen/:id");
-  };
   return (
     <React.Fragment>
       {show && (
         <div>
           {kitchenData?.map((item) => (
-            <Card>
-              <span id={item.id} key={Math.random()}>
-                <div onClick={infoHandler}>{item.name}</div>
-                <div>
-                  {item.openTime}~{item.closeTime}
-                </div>
-                <div>
-                  {item.today?.map((menu) => (
-                    <div id={item.id} key={Math.random()}>
-                      {menu}
-                    </div>
-                  ))}
-                </div>
-              </span>
-            </Card>
+            <DangolList
+              id={item.id}
+              key={Math.random()}
+              name={item.name}
+              openTime={item.openTime}
+              closeTime={item.closeTime}
+              today={item.today}
+            />
           ))}
         </div>
       )}
