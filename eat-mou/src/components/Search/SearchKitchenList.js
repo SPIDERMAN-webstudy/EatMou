@@ -64,21 +64,24 @@ const SearchKitchenList = (props) => {
             </span>
           )}
         </div>
-        {console.log(props.today[0].text)}
-        {props.today[0].text === "undefined" ? (
-          <span className={styles.Today}>
-            {console.log("hi")} Today:
-            {props.today?.map((value) => (
-              <span key={Math.random()}>{value}/</span>
-            ))}
-          </span>
-        ) : (
-          <span className={styles.Today}>
-            Today:
-            {props.today.map((value) => (
-              <span key={Math.random()}>{value.text}/</span>
-            ))}
-          </span>
+        {props.today === "undefined" && (
+          <div>
+            {props.today[0].text === "undefined" ? (
+              <span className={styles.Today}>
+                {console.log("hi")} Today:
+                {props.today?.map((value) => (
+                  <span key={Math.random()}>{value}/</span>
+                ))}
+              </span>
+            ) : (
+              <span className={styles.Today}>
+                Today:
+                {props.today.map((value) => (
+                  <span key={Math.random()}>{value.text}/</span>
+                ))}
+              </span>
+            )}
+          </div>
         )}
         <span className={styles.time}>
           {props.openTime}~{props.closeTime}
