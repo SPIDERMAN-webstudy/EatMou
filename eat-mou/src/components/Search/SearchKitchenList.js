@@ -15,6 +15,7 @@ const SearchKitchenList = (props) => {
     const t = localStorage.getItem(DANGOL);
     if (t !== null) {
       const parse = JSON.parse(t);
+      console.log(parse);
       const CheckBone = parse.filter(function (element) {
         return element.id === props.id;
       });
@@ -22,9 +23,10 @@ const SearchKitchenList = (props) => {
         setshow(false);
       }
     }
-  }, []);
+  }, [bone]);
   const boneLocalSet = () => {
     localStorage.setItem(DANGOL, JSON.stringify(bone));
+    console.log(bone);
     if (bone.length === 0) {
       localStorage.removeItem(DANGOL);
     }
@@ -33,6 +35,10 @@ const SearchKitchenList = (props) => {
     navigate(`/kitchen/${props.id}`, { state: props.id });
   };
   const boneHandler = () => {
+    const prevData = JSON.parse(localStorage.getItem(DANGOL));
+    if (prevData !== null) {
+      bone = prevData;
+    }
     bone.push(props);
     boneLocalSet();
     setshow(false);
