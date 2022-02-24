@@ -13,7 +13,6 @@ const Search = () => {
   const [kitchenDate, setKitchenDate] = useState([]);
   const [sortedKitchen, setSortedKitchen] = useState(kitchenDate);
   const [method, setMethod] = useState(true);
-
   let temp = {};
   const id = "th";
   const [kitchenInput, setKitchenInput] = useState("");
@@ -26,7 +25,7 @@ const Search = () => {
     const loadedKitchen = [];
     for (const key in data) {
       loadedKitchen.push({
-        id: data[key].id,
+        id: key,
         address: data[key].address,
         name: data[key].name,
         menu: data[key].menu,
