@@ -12,6 +12,8 @@ const KitchenInfo = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  console.log(location.state);
+
   const fetchKitchenHandler = useCallback(async () => {
     const response = await fetch(
       "https://react-http-184dd-default-rtdb.asia-southeast1.firebasedatabase.app/kitchen.json"
@@ -21,7 +23,7 @@ const KitchenInfo = () => {
     const loadedKitchen = [];
     for (const key in data) {
       loadedKitchen.push({
-        id: data[key].id,
+        id: key,
         address: data[key].address,
         name: data[key].name,
         menu: data[key].menu,
@@ -42,7 +44,7 @@ const KitchenInfo = () => {
   }, [fetchKitchenHandler]);
 
   let dong = kitchenDate.filter((val) => {
-    if (parseInt(val.id) === location.state) {
+    if (val.name === location.state) {
       return val;
     }
   });

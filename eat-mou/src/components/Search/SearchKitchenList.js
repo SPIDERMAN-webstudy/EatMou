@@ -30,7 +30,7 @@ const SearchKitchenList = (props) => {
     }
   };
   const infoHandler = () => {
-    navigate(`/kitchen/${props.id}`, { state: props.id });
+    navigate(`/kitchen/${props.id}`, { state: props.name });
   };
   const boneHandler = () => {
     bone.push(props);
