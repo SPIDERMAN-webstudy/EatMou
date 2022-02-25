@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 const DangolList = (props) => {
   const navigate = useNavigate();
   const infoHandler = () => {
-    navigate(`/kitchen/${props.id}`, { state: props.name });
+    navigate(`/kitchen/${props.id}`, { state: props.id });
   };
 
   return (

@@ -4,6 +4,14 @@ import styles from "./Title.module.css";
 
 const Title = (props) => {
   const [active, setActive] = useState(true);
+  let dangol = [];
+  const DANGOL = "Dangol";
+  const lo = localStorage.getItem(DANGOL);
+
+  if (lo !== null) {
+    const parse = JSON.parse(lo);
+    dangol = parse;
+  }
 
   const dangolchangeHandler = () => {
     setActive(false);
