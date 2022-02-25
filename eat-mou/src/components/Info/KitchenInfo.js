@@ -44,7 +44,7 @@ const KitchenInfo = () => {
   }, [fetchKitchenHandler]);
 
   let dong = kitchenDate.filter((val) => {
-    if (val.name === location.state) {
+    if (val.id === location.state) {
       return val;
     }
   });
@@ -78,6 +78,7 @@ const KitchenInfo = () => {
               dangol={item.dangol}
               address={item.address}
               telephone={item.telephone}
+              today={item.today}
             />
             <hr className={styles.line}></hr>
             <Today key={Math.random()} today={item.today} />
