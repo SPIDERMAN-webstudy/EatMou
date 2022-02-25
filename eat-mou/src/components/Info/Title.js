@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "./Title.module.css";
 
@@ -13,11 +13,38 @@ const Title = (props) => {
     dangol = parse;
   }
 
+  useEffect(() => {
+    const t = localStorage.getItem(DANGOL);
+    if (t !== null) {
+      const par = JSON.parse(t);
+      const checkBone = par.filter((elem) => {
+        return elem.id === props.id;
+      });
+      if (checkBone.length !== 0) {
+        setActive(false);
+      }
+    }
+  }, []);
+
+  const boneLocalSet = () => {
+    localStorage.setItem(DANGOL, JSON.stringify(dangol));
+    if (dangol.length === 0) {
+      localStorage.removeItem(DANGOL);
+    }
+  };
+
   const dangolchangeHandler = () => {
+    dangol.push(props);
+    boneLocalSet();
     setActive(false);
   };
 
   const dangolcancelHandler = () => {
+    const newDangol = dangol.filter((elem) => {
+      return elem.id !== props.id;
+    });
+    dangol = newDangol;
+    boneLocalSet();
     setActive(true);
   };
 
