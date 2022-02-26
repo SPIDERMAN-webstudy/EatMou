@@ -17,7 +17,6 @@ const LocationKitchenList = (props) => {
   }, [props.selectDistance]);
   //------------------------------------단골 뼈다귀 구현---------------------------------------------------
   const [show, setshow] = useState(true);
-  const navigate = useNavigate();
   const DANGOL = "Dangol";
   let bone = [];
   const t = localStorage.getItem(DANGOL);
@@ -58,16 +57,28 @@ const LocationKitchenList = (props) => {
     boneLocalSet();
     setshow(true);
   };
-
+  //----------------------------------카드 누르면 KitchenInfo로 이동--------------------------------------------------------
+  const navigate = useNavigate();
+  const infoHandler = () => {
+    navigate(`/kitchen/${props.id}`, { state: props.id });
+  };
+  //------------------------------------------------------------------------------------------------------------------------
   return (
     <div>
       {isShort ? (
         <div className={styles.card}>
           <div className={styles.form}>
-            <img className={styles.img} src={props.src} alt="" />
+            <img
+              className={styles.img}
+              onClick={infoHandler}
+              src={props.src}
+              alt=""
+            />
             <div className={styles.info}>
               <div className={styles.title}>
-                <div className={styles.name}>{props.name}</div>
+                <div className={styles.name} onClick={infoHandler}>
+                  {props.name}
+                </div>
                 {show && (
                   <span className={styles.cursor} onClick={boneHandler}>
                     🦴 {props.dangol}

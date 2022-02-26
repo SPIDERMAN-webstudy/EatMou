@@ -55,7 +55,17 @@
     font-size: 1.5rem;
 }
 .cursor:hover {
-  transform: scale(1.1);
+  transform: scale(1.09);
   transition: all 0.2s;
   cursor: pointer;
+}
+.name:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+.img:hover{
+    cursor:pointer;
+    transform: scale(1.05);
+  transition: all 0.2s;
 }
