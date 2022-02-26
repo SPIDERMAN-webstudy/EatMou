@@ -19,7 +19,7 @@ const Location = (props) => {
     const loadedKitchen = [];
     for (const key in data) {
       loadedKitchen.push({
-        id: data[key].id,
+        id: key,
         address: data[key].address,
         name: data[key].name,
         menu: data[key].menu,
@@ -83,6 +83,7 @@ const Location = (props) => {
       {kitchen.map((item) => (
         <LocationKitchenList
           name={item.name}
+          id={item.id}
           openTime={item.openTime}
           closeTime={item.closeTime}
           telephone={item.telephone}
