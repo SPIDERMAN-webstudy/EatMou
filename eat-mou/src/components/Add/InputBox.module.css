@@ -22,3 +22,8 @@
     background-color: #ff6e2e;
     border-radius: 0.6rem;
 }
+.inputButton:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.2s;
+}

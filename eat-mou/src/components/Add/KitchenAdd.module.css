@@ -47,6 +47,7 @@
 .pictureLabel3:hover{
   transform: scale(1.1);
   transition: all 0.2s;
+  cursor: pointer;
 }
 .imageButton{
   display: flex;
@@ -77,7 +78,8 @@
 
 .button:hover {
   transform: scale(1.1);
-  transition: all 0.1s;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 .input {
   flex-grow: 1;
@@ -149,11 +151,13 @@
 }
 .registerButton:hover {
   transform: scale(1.1);
-  transition: all 0.2s;
+  transition: all 0.5s;
+  cursor:pointer;
 }
 .registerButton:disabled{
   background-color: #CCC;
   transform:none;
+  cursor:auto;
 }
 .todayTitle{
   border-top:3px solid rgba(150, 149, 149, 0.616);
