@@ -65,6 +65,13 @@ const Location = (props) => {
   const selectDistance = (event) => {
     setDistance(event.target.value);
   };
+  //------------------------------가까운 거리 식당부터 출력 시키기------------------------------------------------------------
+const [sortedKitchen, setSortedKitchen] = useState();
+useEffect(()=>{
+
+setSortedKitchen(kitchen.sort((a, b) => a.distance - b.distance));
+},[distance])
+
   //------------------------------------------------------------------------------------------
 
   return (

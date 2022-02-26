@@ -39,7 +39,7 @@ const KitchenAdd = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const distance = Math.floor(Math.random()*1490+10)//거리 10m에서 1500m까지 랜덤 설정
+    const distance = parseInt(Math.floor(Math.random()*1490+10))//거리 10m에서 1500m까지 랜덤 설정
     const dangol = 0;
     const kitchenImg = "https://missioninfra.net/img/noimg/noimg_4x3.gif"
     const kitchen = {
