@@ -40,24 +40,30 @@ const KitchenAdd = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const distance = Math.floor(Math.random()*1490+10)//거리 10m에서 1500m까지 랜덤 설정
-
+    const dangol = 0;
+    const kitchenImg = "https://missioninfra.net/img/noimg/noimg_4x3.gif"
     const kitchen = {
       name: nameRef.current.value, //
       telphone: telephoneRef.current.value, //
       address: addressRef.current.value, //
       openTime: openTimeRef.current.value, //
       closeTime: closeTimeRef.current.value, //
-      dangol: dangolRef.current.value, //일단 0
-      distance: distance, //일단 0
+      dangol: dangol, //일단 0
+      distance: distance, //랜덤값
       id: idRef.current.value, // 랜덤값
-      kitchenImg: kitchenImgRef.current.value, //일단 아무거나
+      kitchenImg: kitchenImg, //일단 이미지 없음 표시
       menu: menuRef.current.value,
       today: todayList,
     };
+    setTodayList([]);
+    URL.revokeObjectURL(fileImage);
+    setFileImage("");
+    setFIleIsValid(false);
     console.log(todayRef.current.value);
     addKitchenHandler(kitchen);
     event.target.reset();
     console.log(nameRef);
+    window.confirm("등록되었습니다.");
   };
   //---------------------------------식당 사진 업로드--------------------------------------------------------------------------------------------
   const [fileImage, setFileImage] = useState("");
@@ -88,6 +94,7 @@ const [address, setAddress] = useState("");
 const [openTime, setOpenTime] = useState("");
 const [closeTime, setCloseTime] = useState("");
 const [telphone, setTelephone] = useState("");
+const [today, setToday] = useState([]);
 
 const nameChange = (e)=>{
   setName(e.target.value);
