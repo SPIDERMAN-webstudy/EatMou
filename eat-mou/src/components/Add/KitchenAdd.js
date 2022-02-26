@@ -39,6 +39,7 @@ const KitchenAdd = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const distance = Math.floor(Math.random()*1490+10)//거리 10m에서 1500m까지 랜덤 설정
 
     const kitchen = {
       name: nameRef.current.value, //
@@ -47,7 +48,7 @@ const KitchenAdd = (props) => {
       openTime: openTimeRef.current.value, //
       closeTime: closeTimeRef.current.value, //
       dangol: dangolRef.current.value, //일단 0
-      distance: distanceRef.current.value, //일단 0
+      distance: distance, //일단 0
       id: idRef.current.value, // 랜덤값
       kitchenImg: kitchenImgRef.current.value, //일단 아무거나
       menu: menuRef.current.value,

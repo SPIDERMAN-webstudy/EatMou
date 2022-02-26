@@ -13,7 +13,10 @@
   border-radius: 0.6rem;
   margin-right:1%;
 }
-
+.OkButton:hover{
+  transform: scale(1.1);
+  transition: all 0.2s;
+  cursor: pointer;}
 .deleteButton {
   border: 0px;
   background-color: transparent;
@@ -22,6 +25,11 @@
   font-family: Roboto;
   background-color: #ff6e2e;
   border-radius: 0.6rem;
+}
+.deleteButton:hover{
+  transform: scale(1.1);
+  transition: all 0.2s;
+  cursor: pointer;
 }
 .button{
     margin-bottom:2%;
