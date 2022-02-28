@@ -1,17 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button from "../UI/Button";
+import MenuCard from "../UI/MenuCard";
 import styles from "./KitchenEdit.module.css";
 
 const KitchenEditTtakgari = (props) => {
   const navigate = useNavigate();
-
-  const nameRef = useRef("");
-  const telephoneRef = useRef("");
-  const addressRef = useRef("");
-  const openTimeRef = useRef("");
-  const closeTimeRef = useRef("");
 
   const [name, setName] = useState(props.name);
   const [telephone, setTelephone] = useState(props.telephone);
@@ -63,8 +57,10 @@ const KitchenEditTtakgari = (props) => {
     }
   }, [name, address, openTime, closeTime, telephone]);
 
+  console.log(props);
+
   return (
-    <div>
+    <div className={styles.editer}>
       <span className={styles.back} onClick={gobackHandler}>
         back
       </span>
@@ -103,19 +99,43 @@ const KitchenEditTtakgari = (props) => {
         </span>
         <hr />
         <div className={styles.today}>-오늘의 메뉴-</div>
-        <div className={styles.inputForm}>
+        <div>
           <input
-            className={styles.input}
+            className={styles.inputt}
             type="text"
             value={today}
             placeholder="당신의 메뉴를 입력하세요"
             onChange={todayChangeHandler}
           />
-          {props.today.map((menu) => (
-            <div key={Math.random()}>{menu}</div>
-          ))}
+          {props.today[0].text === undefined ? (
+            <div>
+              {props.today?.map((menu) => (
+                <div key={Math.random()}>{menu}</div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              {props.today.map((menu) => (
+                <div key={Math.random()}>{menu.text}</div>
+              ))}
+            </div>
+          )}
         </div>
         <hr />
+        <div className={styles.menu}>
+          {props.menu?.map((item) => (
+            <MenuCard id={item.id} key={Math.random()}>
+              {console.log(item)}
+              <img
+                src={item.menuImg}
+                alt={item.menuName}
+                className={styles.menuImg}
+              />
+              <div className={styles.menuName}>{item.menuName}</div>
+              <div className={styles.menuPrice}>{item.menuPrice}</div>
+            </MenuCard>
+          ))}
+        </div>
         <button disabled={!isValid} className={styles.button}>
           저장하기
         </button>

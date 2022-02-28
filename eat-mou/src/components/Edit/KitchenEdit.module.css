@@ -1,3 +1,8 @@
+.editer {
+  display: flex;
+  flex-direction: column;
+}
+
 .input {
   flex-grow: 1;
   border: 0px;
@@ -11,6 +16,20 @@
 }
 
 .input:focus {
+  outline: none;
+}
+
+.inputt {
+  flex-grow: 1;
+  border: 0px;
+  border-bottom: 0.3rem solid #f88656;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  margin: 2%;
+  width: 70%;
+}
+
+.inputt:focus {
   outline: none;
 }
 
@@ -83,4 +102,19 @@ button:disabled:active {
   font-weight: bold;
   color: #ff6e2e;
   text-align: center;
+}
+
+.menuName {
+  font-size: 1.5rem;
+}
+
+.menuImg {
+  width: 13rem;
+  height: 13rem;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1% 5%;
 }
