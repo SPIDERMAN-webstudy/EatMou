@@ -54,7 +54,7 @@ const KitchenInfo = () => {
   };
 
   const editHandler = () => {
-    navigate("/Kitchenadd");
+    navigate("edit", { state: location.state });
   };
 
   return (
