@@ -92,6 +92,7 @@ const KitchenEdit = () => {
           openTime={dong[0].openTime}
           closeTime={dong[0].closeTime}
           today={dong[0].today}
+          menu={dong[0].menu}
         />
       )}
     </div>
