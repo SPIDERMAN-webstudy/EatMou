@@ -91,14 +91,15 @@ const LocationKitchenList = (props) => {
                 )}
               </div>
               <div className={styles.today}>
-                {props.today.map((item) => {if(typeof(item)!=='object'){
-                  console.log(typeof(item));
-                  return `${item}/`;
-                }
-                else{
-                  console.log(item.text);
-                  return `${item.text}/`;
-                }})}
+                {props.today.map((item) => {
+                  if (typeof item !== "object") {
+                    console.log(typeof item);
+                    return `${item}/`;
+                  } else {
+                    console.log(item.text);
+                    return `${item.text}/`;
+                  }
+                })}
               </div>
               <div className={styles.time}>
                 {`${props.openTime}~${props.closeTime} `}
