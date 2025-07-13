@@ -70,7 +70,7 @@ const [sortedKitchen, setSortedKitchen] = useState();
 useEffect(()=>{
 
 setSortedKitchen(kitchen.sort((a, b) => a.distance - b.distance));
-},[distance])
+},[distance, kitchen])
 
   //------------------------------------------------------------------------------------------
 
