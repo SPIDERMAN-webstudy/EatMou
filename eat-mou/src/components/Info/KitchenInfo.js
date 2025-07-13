@@ -19,7 +19,6 @@ const KitchenInfo = () => {
       "https://react-http-184dd-default-rtdb.asia-southeast1.firebasedatabase.app/kitchen.json"
     );
     const data = await response.json();
-    console.log(data);
     const loadedKitchen = [];
     for (const key in data) {
       loadedKitchen.push({
@@ -49,12 +48,14 @@ const KitchenInfo = () => {
     }
   });
 
+  console.log(dong);
+
   const gobackHandler = () => {
     navigate(-1);
   };
 
   const editHandler = () => {
-    navigate("/Kitchenadd");
+    navigate("edit", { state: location.state });
   };
 
   return (

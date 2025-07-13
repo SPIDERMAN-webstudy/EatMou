@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Button from "../UI/Button";
@@ -33,8 +32,8 @@ const Search = () => {
         openTime: data[key].openTime,
         telephone: data[key].telephone,
         kitchenImg: data[key].kitchenImg,
-        dangol: data[key].dangol,
-        distance: data[key].distance,
+        dangol: data[key].dangol === undefined ? 0 : data[key].dangol,
+        distance: data[key].distance === undefined ? 0 : data[key].distance,
         today: data[key].today,
       });
     }
@@ -78,6 +77,7 @@ const Search = () => {
   };
   const distanceButtonHandler = () => {
     temp = sortedKitchen.sort((a, b) => a.distance - b.distance);
+    console.log(temp);
     setSortedKitchen(temp);
     setMethod(true);
   };
